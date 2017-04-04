@@ -1,0 +1,29 @@
+/*
+	Gallery page
+*/
+
+.filter {
+
+	p {
+		display: inline;
+	}
+}
+
+.item {
+	display: block;
+	margin-right: 1%;
+	margin-bottom: 12px;
+	height: 450px;
+	overflow: hidden;
+	@include OptimiseBgImg();
+
+	&.Single {
+		width: 24%;
+	}
+
+	&.Double {
+		width: 49%;
+	}
+
+	
+}

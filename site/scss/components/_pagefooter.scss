@@ -1,0 +1,44 @@
+/*
+	Page footer 
+*/
+
+footer {
+	border-top: 1px solid #BBBBBB;
+    background: rgba(255,255,255,0.4);
+    box-shadow: 0px 1px 10px #000;
+	padding: 30px 0;
+	margin-top: 50px;
+
+	ul {
+		li {
+			display: inline;
+		}
+
+		a {
+			color: $black;
+			text-decoration: none;
+			padding: 0 15px 0 0;
+		}
+
+	}
+
+	.float-right {
+		a { 
+			color: $burgundy;
+			font-size: 1.4em;
+			text-align: center;
+			display: block;
+			width: 30px;
+			float: right; 
+
+			&:hover { color: $pink; }
+		}
+	}
+
+	.copy,
+	.dev {
+		font-size: 0.8em;
+		color: $burgundy;
+		text-align: center;
+	}
+}

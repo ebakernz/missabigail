@@ -1,0 +1,20 @@
+/**
+ * Colours
+ **/
+
+$black: #000000;
+$white: #FFFFFF;
+$grey: #BBBBBB;
+$light_grey: #EEEEEE;
+$burgundy: #942433;
+$pink: #e4484f;
+
+.black-text { 				color: $black !important; }
+.grey-text {				color: $grey !important; }
+.burgundy-text {			color: $burgundy !important; }
+.pink-text {				color: $pink !important; }
+
+.black-background { 		background-color: $black !important; }
+.grey-background {			background-color: $grey !important; }
+.burgundy-background {		background-color: $burgundy !important; }
+.pink-background {			background-color: $pink !important; }

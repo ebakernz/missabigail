@@ -4,5 +4,6 @@
 // compiles into the necessary css files
 require('../scss/index.scss');
 
-// Start your website!
-console.log('Loaded!');
+require('../js/grid.js');
+
+require('../js/effects.js');

@@ -1,10 +1,10 @@
 <% if ShowFilter %>
 	<div class="filter">
-		<p>Filter by:</p>
-		<a href="$Link">All</a>
+		
+		<a class="button<% if FilterActive(all) %> active<% end_if %>" href="$Link">All</a>
 		<% if Categories %>
 			<% loop Categories %>
-				<a href="{$Top.Link}filter/$URLName">
+				<a class="button<% if Top.FilterActive($URLName) %> active<% end_if %>" href="{$Top.Link}filter/$URLName">
 					$Title
 				</a>
 			<% end_loop %>

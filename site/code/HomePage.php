@@ -3,18 +3,15 @@
 class HomePage extends Page {
 
 	private static $has_many = array(
-		'Slides' => 'Slide'
+	
 	);
 
 	public function getCMSFields(){	
-		$fields = parent::getCMSFields();		
-		
-		// Slides
-		$slideGridFieldConfig = GridFieldConfig_RecordEditor::create(10);		
-    	$slideGridFieldConfig->addComponent( new GridFieldSortableRows('SortOrder') );	
-		$slideGridField = new GridField("Slides", "Slide", $this->Slides(), $slideGridFieldConfig);
-		$fields->addFieldToTab('Root.Slides', $slideGridField);
+		$fields = parent::getCMSFields();	
 
+		$fields->removeByName("Background");	
+		
+		
 		return $fields;
 	}
 

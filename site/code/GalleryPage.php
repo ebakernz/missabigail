@@ -12,7 +12,9 @@ class GalleryPage extends Page {
 	);
 	
 	public function getCMSFields(){	
-		$fields = parent::getCMSFields();		
+		$fields = parent::getCMSFields();
+
+		$fields->removeByName('Slides');	
 		
 		// Categories
 		$fields->addFieldToTab('Root.Categories', CheckboxField::create('ShowFilter', 'Show filters'));
@@ -46,6 +48,18 @@ class GalleryPage_Controller extends Page_Controller {
 
 	public function GalleryItems() {
 		return $this->items;
+	}
+
+	public function FilterActive($name) {
+		
+		$params = $this->request->params();
+		$filter = $params['ID'];
+
+		if($filter) {
+			if($filter == $name) return true;
+		} else {
+			if($name == 'all') return true;
+		}		
 	}
 
 	public function filter() {

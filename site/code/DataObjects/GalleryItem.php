@@ -5,6 +5,7 @@ class GalleryItem extends DataObject {
 	private static $db = array(
 		'Title' => 'Text',
 		'ColWidth' => "Enum('Single,Double')",
+		'Orientation' => "Enum('Portrait,Landscape')",
 		'SortOrder' => 'Int'
 	);
 
@@ -15,7 +16,6 @@ class GalleryItem extends DataObject {
 	);
 
 	static $summary_fields = array(
-		'Title' => 'Title',
 		'Image.CMSThumbnail' => 'Image'
 	);
 	
@@ -38,9 +38,21 @@ class GalleryItem extends DataObject {
 				singleton('GalleryItem')->dbObject('ColWidth')->enumValues(),
 				'Single'
 			),
+			new OptionsetField(
+				'Orientation', 
+				'Orientation', 
+				singleton('GalleryItem')->dbObject('Orientation')->enumValues()
+			),
 			$cat
 		);
 	
 	}
 	
+	public function ImageOrientation() {
+		if($this->Image()->getOrientation() == 1) {
+			return 'portrait';
+		} else {
+			return 'landscape';
+		}
+	}
 }

@@ -2,10 +2,20 @@
 	Gallery page
 */
 
-.filter {
+.typography .filter {
 
 	p {
+		font-size: 1.1em;
 		display: inline;
+	}
+
+	a {
+	    margin: 0 10px 20px 0;
+	    display: inline-block;
+
+	    &.active {
+	    	background: $black;
+	    }
 	}
 }
 
@@ -25,5 +35,41 @@
 		width: 49%;
 	}
 
+	
+}
+
+#popups .liner .popup-content.slides {
+	height: 1000px;
+	width: 1000px;
+	overflow: inherit;
+
+	.slide {
+		width: 100%;
+		height: 100%;
+		background: $black;
+		color: $white;
+
+		.item { position: absolute; }
+
+		.portrait {
+			height: 100%;
+			width: 70%;
+			left: 15%;
+		}
+
+		.landscape {
+			width: 100%;
+			height: 70%;
+			top: 15%;
+		}
+	}
+
+	.slidenav a.left {
+		left: -70px;
+	}
+
+	.slidenav a.right {
+		right: -70px;
+	}
 	
 }

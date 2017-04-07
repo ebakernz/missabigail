@@ -1,0 +1,60 @@
+/*
+	Contact page
+*/
+
+.UserDefinedForm {
+
+	h1 {
+		color: $burgundy;
+		margin-bottom: 30px;
+	}
+
+	.contact-details {
+		
+		p {
+			margin-bottom: 30px;
+
+			i {
+				width: 30px;
+				height: 30px;
+				font-size: 1.5em;
+				line-height: 30px;
+				text-align: center;
+				display: block;
+				float: left;
+				margin-right: 20px;
+			}
+
+			span {
+				font-size: 1.2em;
+				display: block;
+				float: left;
+
+			}
+		}
+
+	}
+
+	.social {
+		margin: 20px 0;
+		clear: both;
+
+		a {
+			border: 1px solid $burgundy;
+			transition: none;
+			display: inline-block;
+			font-size: 1.8em;
+			padding: 10px;			
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+		}
+
+		a:hover {
+			background: $burgundy;
+			border: 1px solid $burgundy;
+			i { color: $white; }
+		}
+	}
+}

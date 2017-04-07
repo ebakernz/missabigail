@@ -13,6 +13,9 @@ html {
 	font-size: 14px;
 }
 
+.script-font {
+	font-family: Parisienne;
+}
 
 /**
  * Headings
@@ -49,6 +52,8 @@ h4 {
  **/
 
 .typography p {
+	font-size: 1.2em;
+	line-height: 1.6em;
 	padding: 0.4rem 0;
 }
 
@@ -74,6 +79,25 @@ h4 {
 .typography li {
 	padding: 0.2em 0;
 }
+
+
+button,
+.button {
+	background: $burgundy;
+	color: #FFFFFF;
+	cursor: hand;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 6px 10px;
+	border: 0;
+}
+
+button:hover,
+.button:hover {
+	background: darken($burgundy, 10%);
+}
+
 
 
 

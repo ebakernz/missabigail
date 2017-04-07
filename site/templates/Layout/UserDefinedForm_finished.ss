@@ -40,7 +40,7 @@
 
             <div class="float-left w1x2-left-spaced">
                 <h1 class="script-font">Or send me a message</h1>
-                $Form
+                $Content <!-- from form completion page -->
             </div>
 
         </div>

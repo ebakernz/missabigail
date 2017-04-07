@@ -4,23 +4,33 @@
  **/
 
 html,body{
-	background: url('../images/dot-bg.jpg');
+	height: 100%;
 }
 
 .wrapper {
 	position: relative;
 	height: 100%;
+	@include OptimiseBgImg();
+	padding-bottom: 150px;
 }
 
 main {
-	padding-top: 170px;
+	padding-top: 250px;
 
 	&.fixtotop { padding-top: 0; }
+
+	.inner {
+		background: rgba(255,255,255,0.85);
+	}
 }
 
 .inner {
 	max-width: 1400px;
 	margin: 0 auto;
+}
+
+.liner {
+	padding: 60px;
 }
 
 .table {	
@@ -53,7 +63,8 @@ main {
 .float-right { float: right; }
 
 .w1x2 { width: 50%; }
-.w1x2-right-spaced { width: 47.5%; margin-right: 4%; }
+.w1x2-right-spaced { width: 46%; margin-right: 4%; }
+.w1x2-left-spaced { width: 46%; margin-left: 4%; }
 
 .w1x3 { width: 33.33%; }
 .w2x3 { width: 66.66% }

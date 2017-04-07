@@ -3,27 +3,35 @@
 	Effects 
 */
 
-function GalleryPagePopupSlider() {
 
-	$('.gallery-items .item').click(function() {
+function Slides() {
 
-	})
-
-}
-
-function AllSlides() {
-	
 	// Click on slide nav overrides timer
-	$('.slides nav a').click( function(evt) {
+	$('.slides .slidenav a').click( function(evt) {
 		evt.preventDefault();
-		changeSlides( 'click', $(this).attr('class') );
+		changeSlides( 'click', $(this).attr('href') );
 		clearInterval( setSliderTimer );		
 	});
+
+	// Click on gallery item to trigger
+	$('.gallery-items .popup-trigger').click(function(evt) {
+        evt.preventDefault();
+        var href = $(this).attr('data-eq') - 1;
+        changeSlides( 'select', href );
+        clearInterval( setSliderTimer );
+    });
 	
 	function changeSlides( mode, destination ){
-	
+
 		if( mode == 'first') {
 			$('.slides .slide:eq(0)').css({ 'z-index' : 3 });
+			return false;
+		}
+
+		if( mode == 'select' ) {
+			next = destination;
+			$('.slides .slide:eq(' + next + ')').css({ 'z-index' : 3 });
+			current = next;
 			return false;
 		}
 		
@@ -51,14 +59,10 @@ function AllSlides() {
 				next = current + 1;
 			}
 		}
-		
-		// update activated controls
-		$('.homeSlides nav a').removeClass('active');
-		$('.homeSlides nav a:eq(' + next + ')').addClass('active');
-		
+				
 		// --- UPDATE SLIDER		
 		// move all to bottom
-		$('.slides .slide').css({ 'z-index' : 1, 'opacity' : 0 });
+		$('.slides .slide').css({ 'z-index' : 1 });
 		
 		// move current on top of bottom stack
 		$('.slides .slide:eq(' + current + ')').css({ 'z-index' : 2 });
@@ -72,7 +76,7 @@ function AllSlides() {
 	}
 	
 	// number of slides
-	var numSlides = $('.slides .slide').size() - 1;
+	var numSlides = $('.slides .slide').length - 1;
 	
 	// current slider
 	var current = 0;
@@ -83,10 +87,10 @@ function AllSlides() {
 	// run function on load
 	changeSlides( 'first' );
 	
-	// initiate timed slide
-	var setSliderTimer = setInterval( changeSlides, 7000 );
-	
-	
+	// initiate timed slide, accept for gallery page (hidden, only change on click)
+	if( $('.GalleryPage').length == 0 ) {
+		var setSliderTimer = setInterval( changeSlides, 7000 );
+	}
 }
 
 /* initiate popups */
@@ -99,98 +103,19 @@ function Popups() {
     $('#popups .close').click(function(){
         //$('.popup').toggleClass('hide');
         $('#popups').hide().fadeOut(100);
-        $('#popups .popup-content').empty();
+    //    $('#popups .popup-content').empty();
     });
 }
 
-/*
-    Event enquiries
- */
-/*
-function BookingEnquiries() {
 
-    if( $('.button.booking').length > 0 ) {
+$(document).ready( function() {
+	
+//	GalleryPagePopupSlider();
+	if( $('.slides .slide').length > 0 ) Slides();
+	Popups();
 
-        var popup = $('.booking-form-popup').first();
-        var target = popup.find('.popup-content');
+});
 
-        $('.popup-trigger.booking').click(function(evt) {
-            evt.preventDefault();
-
-            // Fetch form
-            $.ajax({
-
-                url: $(this).attr('href') + 'RenderEnquiryForm/',
-                method: 'GET',
-                success: function( response ){
-                    target.html( response );
-                },
-                error: function( response ){
-                    alert('There was a problem, please try again');
-                }
-
-            });
-
-        });
-
-        $('#Form_EnquiryForm .button').click(function() {
-
-            var form = $(this).closest('form');
-
-            var valid = true;
-            var required_fields = [
-                form.find('input[name=Name]'),
-                form.find('input[name=Email]')
-            ];
-
-            // check required fields contain something
-            // if not, set valid to false and add error classes
-
-            $.each(required_fields, function(key, field) {
-                if( !field.val() ){
-                    valid = false;
-                    field.addClass('required error');
-                }
-            })
-
-            if( !valid ) {
-                alert('Please complete all the required fields');
-            } else {
-                // otherwise, submit the form
-                $.ajax({
-
-                    url: form.attr('action') + 'SubmitEnquiryForm/',
-                    type: form.attr('method'),
-                    data: form.serialize(),
-                    success: function(response) {
-                        json = jQuery.parseJSON( response);
-                        if(json.HTML) {
-                            target.html(json.HTML);
-                        }
-                    },
-                    error: function(response) {
-                        alert('There was a problem, please try again');
-                    }
-                });
-            }
-
-        });
-
-        // Handle clearing of error classes from required inputs - as content is typed
-        
-        $('#Form_EnquiryForm input.text, #Form_EnquiryForm textarea').change(function() {
-            if( $(this).hasClass('required error') ){
-                if( $(this).val() ){
-                    $(this).removeClass('required error');
-                }
-            }
-        });
-
-    } else {
-        console.log('nope');
-    }
-}
-*/
 /*
 function Slide( direction, target ){
 
@@ -237,11 +162,3 @@ function Slide( direction, target ){
 	}, 200);
 	
 }*/
-
-$(document).ready( function() {
-	
-	GalleryPagePopupSlider();
-	AllSlides();
-	Popups();
-
-});

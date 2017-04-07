@@ -38,8 +38,11 @@
  *
  * These should match the class of said page (ie HomePage = homepage, Contact = contact)
  **/
+ 
+@import 'pages/page';
 @import 'pages/homepage';
 @import 'pages/gallery';
+@import 'pages/contact';
 
 
 

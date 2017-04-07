@@ -7,7 +7,7 @@
 					<% loop GalleryItems %>
 
 						<div class="slide">
-							<div class="item $ImageOrientation" style="background-image: url('$Image.setWidth(800).URL')" alt="$Title"></div>
+							<div class="item $ImageOrientation" style="background-image: url('$Image.setWidth(1200).URL')" alt="$Title"></div>
 						</div>
 
 					<% end_loop %>

@@ -49,7 +49,10 @@
 		background: $black;
 		color: $white;
 
-		.item { position: absolute; }
+		.item { 
+			position: absolute; 
+			margin: 0;
+		}
 
 		.portrait {
 			height: 100%;

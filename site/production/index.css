@@ -2390,7 +2390,8 @@ footer {
     background: #000000;
     color: #FFFFFF; }
     #popups .liner .popup-content.slides .slide .item {
-      position: absolute; }
+      position: absolute;
+      margin: 0; }
     #popups .liner .popup-content.slides .slide .portrait {
       height: 100%;
       width: 70%;

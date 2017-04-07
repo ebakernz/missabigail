@@ -451,6 +451,39 @@ module.exports = g;
 */
 
 
+// config for screensize thresholds and settings
+var config = {
+    multiSize: {
+        large: 1150,
+        medium: 660,
+        small: 400
+    }
+};
+
+/**
+ * Multi-size graphics
+ * These allow us to load the relevant image size, depending on the size of the screen
+ * By default we load a mobile-sized image initially, and swap to larger pics if applicable
+ **/
+function ResponsiveBG(){
+
+    $('.responsive-bg').each( function( key, panel ){
+
+        panel = $(panel);
+        var panelWidth = panel.outerWidth();
+        
+        if( panelWidth > config.multiSize.large && panel.data('large') ){
+            panel.delay(1000).css({ 'background-image': 'url('+ panel.data('large') +')' });
+        }else if( panelWidth > config.multiSize.medium && panel.data('medium') ){
+            panel.css({'background-image': 'url('+ panel.data('medium') +')' });
+        }else if(panel.data('small')){
+            panel.css({'background-image': 'url('+ panel.data('small') +')' });
+        }
+
+    });
+
+}
+
 function Slides() {
 
 	// Click on slide nav overrides timer
@@ -563,11 +596,17 @@ function Popups() {
 
 
 $(document).ready( function() {
-	
-//	GalleryPagePopupSlider();
+	ResponsiveBG();
 	if( $('.slides .slide').length > 0 ) Slides();
 	Popups();
+});
 
+$(window).resize(function(){
+    ResponsiveBG();
+});
+
+$(window).scroll( function() {
+    ResponsiveBG();
 });
 
 /*

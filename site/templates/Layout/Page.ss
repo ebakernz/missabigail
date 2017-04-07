@@ -14,14 +14,14 @@
 
 					<% if SingleSlide %>
 						<% loop Slides %>
-							<div class="slide single" style="background-image: url('$SlideImg.URL')" alt="$Title"></div>
+							<div class="slide single" style="background-image: url('$SlideImg.setHeight(700).URL')" alt="$Title"></div>
 						<% end_loop %>
 					<% else %>
 
 						<div class="slides">
 
 							<% loop Slides %>
-								<div class="slide" style="background-image: url('$SlideImg.URL')" alt="$Title"></div>
+								<div class="slide" style="background-image: url('$SlideImg.setHeight(700).URL')" alt="$Title"></div>
 							<% end_loop %>
 
 							<div class="slidenav">

@@ -2,7 +2,12 @@
 	<div class="slides">
 		<% loop Slides %>
 
-			<div class="slide" style="background-image: url('$SlideImg.URL')"<% if Title %> alt="$Title"<% end_if %>></div>
+			<div class="slide responsive-bg" style="background-image: url('$SlideImg.setWidth(1000).URL')"
+				data-large="$SlideImg.setWidth(2000).URL"
+				data-medium="$SlideImg.setWidth(1200).URL"
+				data-small="$SlideImg.setWidth(700).URL"
+				<% if Title %> alt="$Title"<% end_if %>
+			></div>
 
 		<% end_loop %>
 

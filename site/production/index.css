@@ -2086,6 +2086,11 @@ button {
     margin-bottom: 10px; }
   #UserForm_Form .field.text input:focus, #UserForm_Form .field.text input:active {
     border-color: #BBBBBB; }
+  #UserForm_Form .field .error {
+    color: #942433; }
+  #UserForm_Form .field input.error,
+  #UserForm_Form .field textarea.error {
+    border: 1px solid #942433; }
 
 input[type="submit"] {
   -webkit-transition: all 0.2s ease-in-out;
@@ -2246,11 +2251,13 @@ footer {
     float: right; }
     footer .float-right a:hover {
       color: #e4484f; }
-  footer .copy,
-  footer .dev {
+  footer .copy {
     font-size: 0.8em;
     color: #942433;
     text-align: center; }
+    footer .copy span {
+      display: inline-block;
+      margin-left: 20px; }
 
 /**
  * Page-specific

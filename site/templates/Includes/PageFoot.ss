@@ -9,7 +9,7 @@
         </ul>
 
         <div class="float-left w1x3">
-            <p>Copyright &copy; Miss Abigail, $Now.Year, Site by Emma Clark</p>
+            <p class="copy">Copyright &copy; Miss Abigail, {$Now.Year}. <span>Site by Emma Baker.</span></p>
         </div>
 
         <div class="float-right w1x3">

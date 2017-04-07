@@ -9,8 +9,8 @@ class HomePage extends Page {
 	public function getCMSFields(){	
 		$fields = parent::getCMSFields();	
 
-		$fields->removeByName("Background");	
-		
+		$fields->removeByName("Content");
+		$fields->removeByName("Background");
 		
 		return $fields;
 	}

@@ -3,6 +3,7 @@
 
 ## Requirements
 
+- Composer
 - Node Package Manager (npm) (https://www.npmjs.com/)
 - Webpack (https://webpack.github.io/)
 - SilverStripe 3.4

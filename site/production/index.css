@@ -2149,16 +2149,18 @@ input[type="submit"]:hover {
  * NAV PRIMARY
  **/
 .mainnav {
-  /*background: rgba(255,255,255,0.7);*/
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 90%, rgba(255, 255, 255, 0) 100%);
+  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.85);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.85) 1%, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0.65) 40%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0.25) 80%, rgba(255, 255, 255, 0) 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 90%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.85) 1%, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0.65) 40%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0.25) 80%, rgba(255, 255, 255, 0) 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 90%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 1%, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0.65) 40%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0.25) 80%, rgba(255, 255, 255, 0) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', endColorstr='#00ffffff',GradientType=0 );
   /* IE6-9 */
-  padding: 10px 0; }
+  padding: 10px 0 0;
+  height: 40px; }
   .mainnav li {
     display: inline;
     text-align: center; }
@@ -2220,8 +2222,17 @@ header {
   z-index: 4;
   width: 100%; }
   header .dots {
-    background: rgba(255, 225, 187, 0.85);
-    /*background: url('../images/dot-bg.jpg');*/ }
+    background: url(data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/7gAOQWRvYmUAZMAAAAAB/9sAhAAGBAQEBQQGBQUGCQYFBgkLCAYGCAsMCgoLCgoMEAwMDAwMDBAMDg8QDw4MExMUFBMTHBsbGxwfHx8fHx8fHx8fAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAAYABgDAREAAhEBAxEB/8QAXgABAQEAAAAAAAAAAAAAAAAAAAQIAQEBAQEBAAAAAAAAAAAAAAAAAwEEBRAAAgIDAQEBAAAAAAAAAAAAAAESBBEhQQJhIhEBAAMBAQAAAAAAAAAAAAAAABEhAxIB/9oADAMBAAIRAxEAPwDSFSorC9/uMTysce5t3668xSd6eCCvgA3x4AGBvqwaADq+AUWrasLwoRiW227ikssuZt//2Q==);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=90);
+    /* Modern Browsers */
+    opacity: 0.9; }
   header h1 {
     padding: 20px 0 0;
     line-height: 0.8em; }
@@ -2246,30 +2257,31 @@ footer {
   bottom: 0;
   left: 0;
   z-index: 4;
-  border-top: 1px solid #BBBBBB;
-  /*box-shadow: 0px 1px 10px #000;*/
-  background: rgba(255, 225, 187, 0.5);
-  /* background: url('../images/dot-bg.jpg');*/
-  padding: 20px 0; }
+  /*border-top: 1px solid rgba(255, 225, 187, 1	);*/
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
+  background: url(data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/7gAOQWRvYmUAZMAAAAAB/9sAhAAGBAQEBQQGBQUGCQYFBgkLCAYGCAsMCgoLCgoMEAwMDAwMDBAMDg8QDw4MExMUFBMTHBsbGxwfHx8fHx8fHx8fAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAAYABgDAREAAhEBAxEB/8QAXgABAQEAAAAAAAAAAAAAAAAAAAQIAQEBAQEBAAAAAAAAAAAAAAAAAwEEBRAAAgIDAQEBAAAAAAAAAAAAAAESBBEhQQJhIhEBAAMBAQAAAAAAAAAAAAAAABEhAxIB/9oADAMBAAIRAxEAPwDSFSorC9/uMTysce5t3668xSd6eCCvgA3x4AGBvqwaADq+AUWrasLwoRiW227ikssuZt//2Q==);
+  opacity: 0.85;
+  padding: 15px 0; }
   footer ul {
     float: left; }
     footer ul li {
       display: inline; }
     footer ul a {
-      color: #000000;
+      color: #942433;
       text-decoration: none;
       padding: 0 15px 0 0; }
   footer .float-right a {
     color: #942433;
     font-size: 1.4em;
+    line-height: 20px;
     text-align: center;
     display: block;
     width: 30px;
+    height: 20px;
     float: right; }
     footer .float-right a:hover {
       color: #e4484f; }
   footer .copy {
-    font-size: 0.8em;
     color: #942433;
     text-align: center; }
     footer .copy span {

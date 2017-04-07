@@ -4,7 +4,7 @@
     
         <ul class="float-left w1x3"> 
             <% loop ShowAllFooterLinks %>
-                <li><a href="ShowPageLink">$FooterText</a></li>
+                <li><a href="$ShowPageLink">$FooterText</a></li>
             <% end_loop %>
         </ul>
 

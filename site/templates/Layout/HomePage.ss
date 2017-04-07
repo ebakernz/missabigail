@@ -6,7 +6,7 @@
 
 		<% end_loop %>
 
-		<if not SingleSlide %>
+		<% if not SingleSlide %>
 			<div class="slidenav">
 				<a href="prev" class="left"><i class="fa fa-angle-left"></i></a>
 				<a href="next" class="right"><i class="fa fa-angle-right"></i></a>

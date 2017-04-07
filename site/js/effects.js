@@ -74,24 +74,29 @@ function Slides() {
 		
 		// --- UPDATE COUNTER
 		current = next;	
+	
 		
 	}
 	
 	// number of slides
 	var numSlides = $('.slides .slide').length - 1;
+
+	// Check if there is more than 1 slide, so don't flash single image
+	if( numSlides ) {
 	
-	// current slider
-	var current = 0;
-	
-	// declare variable
-	var next = 1;
-	
-	// run function on load
-	changeSlides( 'first' );
-	
-	// initiate timed slide, accept for gallery page (hidden, only change on click)
-	if( $('.GalleryPage').length == 0 ) {
-		var setSliderTimer = setInterval( changeSlides, 7000 );
+		// current slider
+		var current = 0;
+		
+		// declare variable
+		var next = 1;
+		
+		// run function on load
+		changeSlides( 'first' );
+		
+		// initiate timed slide, accept for gallery page (hidden, only change on click)
+		if( $('.GalleryPage').length == 0 ) {
+			var setSliderTimer = setInterval( changeSlides, 7000 );
+		}
 	}
 }
 

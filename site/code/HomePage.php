@@ -11,6 +11,7 @@ class HomePage extends Page {
 
 		$fields->removeByName("Content");
 		$fields->removeByName("Background");
+		$fields->removeByName("note");
 		
 		return $fields;
 	}

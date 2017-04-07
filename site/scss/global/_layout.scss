@@ -3,19 +3,20 @@
  * General layout
  **/
 
-html,body{
-	height: 100%;
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
 }
 
 .wrapper {
-	position: relative;
-	height: 100%;
-	@include OptimiseBgImg();
-	padding-bottom: 150px;
+	min-height:100%;
+	position:relative;
 }
 
 main {
-	padding-top: 250px;
+	padding: 40px 0 150px;
 
 	&.fixtotop { padding-top: 0; }
 

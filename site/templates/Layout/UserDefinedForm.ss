@@ -28,12 +28,14 @@
                     	<i class="fa fa-envelope"></i>
                     	<span>$SiteConfig.Email</span>
                     </p>
-                </div>
+                
 
                 <div class="social">
                     <a href="$SiteConfig.Instagram" class="social instagram" title="Go to Miss Abigail Bridal Couture Instagram"><i class="fa fa-instagram"></i></a>
                     <a href="$SiteConfig.Facebook" class="social facebook" title="Go to Miss Abigail Bridal Couture Facebook"><i class="fa fa-facebook"></i></a>
                     <a href="mailto:enquiries@missabigail.co.nz" id="email" title="Email Miss Abigil Bridal Couture"><i class="fa fa-envelope"></i></a>
+                </div>
+
                 </div>
 
             </div>

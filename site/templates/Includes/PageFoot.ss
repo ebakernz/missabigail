@@ -1,6 +1,6 @@
 <footer>
 
-    <div class="inner">
+    <div class="inner cf">
     
         <ul class="float-left w1x3"> 
             <% loop ShowAllFooterLinks %>

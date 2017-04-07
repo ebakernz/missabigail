@@ -16,6 +16,20 @@ html {
 .script-font {
 	font-family: Parisienne;
 }
+.burgundy {
+	color: $burgundy;
+}
+.pink {
+	color: $pink;
+}
+.script-font-burgundy {
+	font-family: Parisienne;
+	color: $burgundy;
+}
+.script-font-pink {
+	font-family: Parisienne;
+	color: $pink;
+}
 
 /**
  * Headings

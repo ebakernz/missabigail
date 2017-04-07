@@ -33,28 +33,30 @@
 			}
 		}
 
-	}
+		.social {
+			margin: 20px 0;
+			clear: both;
 
-	.social {
-		margin: 20px 0;
-		clear: both;
+			a {
+				border: 1px solid $burgundy;
+				transition: none;
+				display: inline-block;
+				font-size: 1.8em;
+				padding: 10px;			
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+			}
 
-		a {
-			border: 1px solid $burgundy;
-			transition: none;
-			display: inline-block;
-			font-size: 1.8em;
-			padding: 10px;			
-			width: 30px;
-			height: 30px;
-			line-height: 30px;
-			text-align: center;
+			a:hover {
+				background: $burgundy;
+				border: 1px solid $burgundy;
+				i { color: $white; }
+			}
 		}
 
-		a:hover {
-			background: $burgundy;
-			border: 1px solid $burgundy;
-			i { color: $white; }
-		}
 	}
+
+	
 }

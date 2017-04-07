@@ -1,0 +1,21 @@
+/*
+	CMS Editor Styles
+*/
+
+.script-font {
+	font-family: Parisienne;
+}
+.script-font-burgundy {
+	font-family: Parisienne;
+	color: #942433;
+}
+.script-font-pink {
+	font-family: Parisienne;
+	color: #e4484f;
+}
+.burgundy-text {
+	color: #942433;
+}
+.pink-text {
+	color: #e4484f;
+}

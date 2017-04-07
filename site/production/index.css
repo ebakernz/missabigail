@@ -1830,22 +1830,18 @@
 /**
  * General layout
  **/
-html, body {
+html,
+body {
+  margin: 0;
+  padding: 0;
   height: 100%; }
 
 .wrapper {
-  position: relative;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-bottom: 150px; }
+  min-height: 100%;
+  position: relative; }
 
 main {
-  padding-top: 250px; }
+  padding: 40px 0 150px; }
   main.fixtotop {
     padding-top: 0; }
   main .inner {
@@ -1980,6 +1976,20 @@ html {
 
 .script-font {
   font-family: Parisienne; }
+
+.burgundy {
+  color: #942433; }
+
+.pink {
+  color: #e4484f; }
+
+.script-font-burgundy {
+  font-family: Parisienne;
+  color: #942433; }
+
+.script-font-pink {
+  font-family: Parisienne;
+  color: #e4484f; }
 
 /**
  * Headings
@@ -2147,6 +2157,7 @@ input[type="submit"]:hover {
     display: inline;
     text-align: center; }
   .mainnav a {
+    font-family: 'Times New Roman';
     font-size: 1.2em;
     color: #000000;
     text-transform: uppercase;
@@ -2199,8 +2210,8 @@ input[type="submit"]:hover {
 */
 header {
   text-align: center;
-  position: absolute;
-  z-index: 4;
+  /*position: absolute;
+    z-index: 4;*/
   width: 100%; }
   header .dots {
     background: rgba(255, 225, 187, 0.85);
@@ -2225,15 +2236,15 @@ header {
 */
 footer {
   position: absolute;
+  right: 0;
   bottom: 0;
+  left: 0;
   z-index: 4;
-  width: 100%;
   border-top: 1px solid #BBBBBB;
-  box-shadow: 0px 1px 10px #000;
+  /*box-shadow: 0px 1px 10px #000;*/
   background: rgba(255, 225, 187, 0.5);
-  /*background: url('../images/dot-bg.jpg');*/
-  padding: 20px 0;
-  margin-top: 50px; }
+  /* background: url('../images/dot-bg.jpg');*/
+  padding: 20px 0; }
   footer ul {
     float: left; }
     footer ul li {
@@ -2313,6 +2324,9 @@ footer {
 /**
  * HOMEPAGE
  **/
+.HomePage .wrapper {
+  height: 100%; }
+
 .HomePage .slides {
   height: 100%; }
 
@@ -2393,10 +2407,10 @@ footer {
     display: block;
     float: left; }
 
-.UserDefinedForm .social {
+.UserDefinedForm .contact-details .social {
   margin: 20px 0;
   clear: both; }
-  .UserDefinedForm .social a {
+  .UserDefinedForm .contact-details .social a {
     border: 1px solid #942433;
     transition: none;
     display: inline-block;
@@ -2406,10 +2420,10 @@ footer {
     height: 30px;
     line-height: 30px;
     text-align: center; }
-  .UserDefinedForm .social a:hover {
+  .UserDefinedForm .contact-details .social a:hover {
     background: #942433;
     border: 1px solid #942433; }
-    .UserDefinedForm .social a:hover i {
+    .UserDefinedForm .contact-details .social a:hover i {
       color: #FFFFFF; }
 
 /*

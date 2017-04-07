@@ -31,6 +31,7 @@ class GalleryItem extends DataObject {
 		return new FieldList(
 			new TextField('Title', 'Title<br />(used for hidden description)'),
 			$img,
+			new LiteralField('SizeNote', '<p><strong>Ideal image sizing:</strong><br />Portrait: 1200px high max<br />Landscape: 1200px wide max</p>'),
 			new OptionsetField(
 				'ColWidth', 
 				'Column width', 

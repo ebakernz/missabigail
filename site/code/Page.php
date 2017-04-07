@@ -16,8 +16,10 @@ class Page extends SiteTree {
 
 		$fields->addFieldToTab('Root.Background', UploadField::create('BackgroundImage', 'Background image')->setFolderName('BackgroundImages'));
 
-		$fields->addFieldToTab('Root.Slides', LiteralField::create('note', '<h4>Please note:</h4><p>These images will be display on the right half of the page. If only one slide is created it will be displayed as a static image. If multiple slides are created, a slider or fade effect between the images will be created.</p>'));
 		// Slides
+		$fields->addFieldToTab('Root.Slides', LiteralField::create('heading', '<h4>Please note:</h4>'));
+		$fields->addFieldToTab('Root.Slides', LiteralField::create('note', '<p>These images will be display on the right half of the page. If only one slide is created it will be displayed as a static image. If multiple slides are created, a slider or fade effect between the images will be created.<br /><strong>Ideal size:</strong> 600px wide x 700px high</p>'));
+
 		$slideGridFieldConfig = GridFieldConfig_RecordEditor::create(10);		
     	$slideGridFieldConfig->addComponent( new GridFieldSortableRows('SortOrder') );	
 		$slideGridField = new GridField("Slides", "Slide", $this->Slides(), $slideGridFieldConfig);

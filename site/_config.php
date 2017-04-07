@@ -7,6 +7,7 @@ i18n::set_locale('en_US');
 
 // Extensions
 DataObject::add_extension('SiteConfig', 'SiteConfigExtension');
+Object::add_extension('UserDefinedForm', 'UserDefinedFormExtension');
 
 // specify log files
 $path = BASE_PATH.'/../logs';

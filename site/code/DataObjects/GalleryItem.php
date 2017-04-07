@@ -5,7 +5,6 @@ class GalleryItem extends DataObject {
 	private static $db = array(
 		'Title' => 'Text',
 		'ColWidth' => "Enum('Single,Double')",
-		'Orientation' => "Enum('Portrait,Landscape')",
 		'SortOrder' => 'Int'
 	);
 
@@ -37,11 +36,6 @@ class GalleryItem extends DataObject {
 				'Column width', 
 				singleton('GalleryItem')->dbObject('ColWidth')->enumValues(),
 				'Single'
-			),
-			new OptionsetField(
-				'Orientation', 
-				'Orientation', 
-				singleton('GalleryItem')->dbObject('Orientation')->enumValues()
 			),
 			$cat
 		);

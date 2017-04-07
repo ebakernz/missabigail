@@ -463,8 +463,9 @@ function Slides() {
 	// Click on gallery item to trigger
 	$('.gallery-items .popup-trigger').click(function(evt) {
         evt.preventDefault();
-        var href = $(this).attr('data-eq') - 1;
-        changeSlides( 'select', href );
+        var href = $(this).attr('data-eq');
+        var num = href - 1;
+        changeSlides( 'select', num );
         clearInterval( setSliderTimer );
     });
 	
@@ -477,6 +478,7 @@ function Slides() {
 
 		if( mode == 'select' ) {
 			next = destination;
+			$('.slides .slide').css({ 'z-index' : 1 });
 			$('.slides .slide:eq(' + next + ')').css({ 'z-index' : 3 });
 			current = next;
 			return false;

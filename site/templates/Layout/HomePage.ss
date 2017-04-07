@@ -2,7 +2,7 @@
 	<div class="slides">
 		<% loop Slides %>
 
-			<div class="slide" style="background-image: url('$SlideImg.URL')" alt="$Title"></div>
+			<div class="slide" style="background-image: url('$SlideImg.URL')"<% if Title %> alt="$Title"<% end_if %>></div>
 
 		<% end_loop %>
 

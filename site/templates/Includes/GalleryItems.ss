@@ -2,7 +2,7 @@
 	<div class="grid">
 		<% loop GalleryItems %>
 
-			<a href="$Image.URL" class="item grid-item float-left $ImageOrientation $ColWidth popup-trigger slideshow" data-eq="$Pos" style="background-image: url('$Image.URL')" data-link="$Image.URL" alt="$Title">
+			<a class="item grid-item float-left $ColWidth popup-trigger" data-eq="$Pos" style="background-image: url('$Image.URL')"<% if Title %> alt="$Title"<% end_if %>>
 			</a>
 
 		<% end_loop %>

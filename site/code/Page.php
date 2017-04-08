@@ -69,7 +69,7 @@ class Page_Controller extends ContentController {
 			Requirements::css('site/production/index.css');
 		}
 
-		Requirements::css('https://fonts.googleapis.com/css?family=Parisienne');
+		Requirements::css('https://fonts.googleapis.com/css?family=Parisienne|Playfair+Display:400,700');
 	}
 
 	function SingleSlide() {

@@ -1977,7 +1977,7 @@ main {
  **/
 body,
 html {
-  font-family: 'Open Sans', serif;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   font-size: 14px; }
 
 .script-font {
@@ -2165,7 +2165,6 @@ input[type="submit"]:hover {
     display: inline;
     text-align: center; }
   .mainnav a {
-    font-family: 'Times New Roman';
     font-size: 1.2em;
     color: #000000;
     text-transform: uppercase;
@@ -2243,7 +2242,6 @@ header {
     header h1 img {
       max-width: 100%; }
   header h2 {
-    font-family: 'Times New Roman';
     font-size: 1.3em;
     padding: 0 0 15px;
     text-transform: uppercase; }
@@ -2429,13 +2427,12 @@ footer {
 /*
 	Contact page
 */
-.UserDefinedForm h1 {
-  color: #942433;
-  margin-bottom: 30px; }
+.UserDefinedForm .typography h1 {
+  color: #942433; }
 
-.UserDefinedForm .contact-details p {
+.UserDefinedForm .typography .contact-details p {
   margin-bottom: 30px; }
-  .UserDefinedForm .contact-details p i {
+  .UserDefinedForm .typography .contact-details p i {
     width: 30px;
     height: 30px;
     font-size: 1.5em;
@@ -2444,15 +2441,15 @@ footer {
     display: block;
     float: left;
     margin-right: 20px; }
-  .UserDefinedForm .contact-details p span {
+  .UserDefinedForm .typography .contact-details p span {
     font-size: 1.2em;
     display: block;
     float: left; }
 
-.UserDefinedForm .contact-details .social {
+.UserDefinedForm .typography .contact-details .social {
   margin: 20px 0;
   clear: both; }
-  .UserDefinedForm .contact-details .social a {
+  .UserDefinedForm .typography .contact-details .social a {
     border: 1px solid #942433;
     transition: none;
     display: inline-block;
@@ -2462,10 +2459,10 @@ footer {
     height: 30px;
     line-height: 30px;
     text-align: center; }
-  .UserDefinedForm .contact-details .social a:hover {
+  .UserDefinedForm .typography .contact-details .social a:hover {
     background: #942433;
     border: 1px solid #942433; }
-    .UserDefinedForm .contact-details .social a:hover i {
+    .UserDefinedForm .typography .contact-details .social a:hover i {
       color: #FFFFFF; }
 
 /*

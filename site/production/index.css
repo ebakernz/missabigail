@@ -2288,6 +2288,27 @@ footer {
       display: inline-block;
       margin-left: 20px; }
 
+/*
+	Testimonials
+*/
+.testimonials {
+  margin-top: 30px; }
+  .testimonials h3 {
+    font-family: Parisienne; }
+  .testimonials .quote {
+    border-bottom: 1px solid #BBBBBB;
+    padding-bottom: 10px;
+    margin-bottom: 20px; }
+    .testimonials .quote p {
+      font-size: 1.1em;
+      font-style: italic;
+      line-height: 1.4em;
+      padding: 0; }
+      .testimonials .quote p.author {
+        font-size: 0.9em;
+        font-style: normal;
+        text-align: right; }
+
 /**
  * Page-specific
  *

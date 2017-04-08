@@ -8,6 +8,11 @@
 
 				<div class="float-left w1x2-right-spaced">
 					$Content
+
+					<% if Testimonials %>
+						<% include Testimonials %>
+					<% end_if %>
+					
 				</div>
 
 				<div class="sidebar float-left w1x2-left-spaced">

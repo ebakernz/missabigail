@@ -10,6 +10,10 @@ class Page extends SiteTree {
 	private static $has_many = array(
 		'Slides' => 'Slide'
 	);
+
+	private static $many_many = array(
+		'Testimonials' => 'Testimonial'
+	);
 	
 	public function getCMSFields(){	
 		$fields = parent::getCMSFields();

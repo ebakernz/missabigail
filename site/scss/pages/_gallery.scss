@@ -22,7 +22,7 @@
 .item {
 	display: block;
 	margin-right: 1%;
-	margin-bottom: 12px;
+	margin-bottom: 13px;
 	height: 450px;
 	overflow: hidden;
 	@include OptimiseBgImg();
@@ -38,41 +38,73 @@
 	
 }
 
-#popups .liner .popup-content.slides {
-	height: 1000px;
-	width: 1000px;
-	overflow: inherit;
+#popups {
 
-	.slide {
-		width: 100%;
-		height: 100%;
-		background: $black;
-		color: $white;
+	.liner .popup-content.slides {
+		height: 1000px;
+		width: 1000px;
+		overflow: inherit;
 
-		.item { 
-			position: absolute; 
-			margin: 0;
-		}
-
-		.portrait {
-			height: 100%;
-			width: 70%;
-			left: 15%;
-		}
-
-		.landscape {
+		.slide {
 			width: 100%;
-			height: 70%;
-			top: 15%;
+			height: 100%;
+			background: $black;
+			color: $white;
+
+			.item { 
+				position: absolute; 
+				margin: auto;
+			}
+
+			.portrait {
+				height: 100%;
+				width: 70%;
+				left: 0;
+				right: 0;
+			}
+
+			.landscape {
+				width: 100%;
+				height: 70%;
+				top: 0;
+				bottom: 0;
+			}
+		}
+
+		.slidenav a.left {
+			left: -70px;
+		}
+
+		.slidenav a.right {
+			right: -70px;
 		}
 	}
 
-	.slidenav a.left {
-		left: -70px;
+	.inner.resize900 {
+		width: 800px;
+		height: 800px;
+		.liner .popup-content.slides {
+			height: 800px;
+			width: 800px;
+		}
 	}
 
-	.slidenav a.right {
-		right: -70px;
+	.inner.resize700 {
+		width: 600px;
+		height: 600px;
+		.liner .popup-content.slides {
+			height: 600px;
+			width: 600px;
+		}
 	}
-	
+
+	.inner.resize500 {
+		width: 450px;
+		height: 450px;
+		.liner .popup-content.slides {
+			height: 450px;
+			width: 450px;
+		}
+	}
+
 }

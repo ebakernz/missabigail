@@ -11,6 +11,10 @@
 	    </div>
 	</div>
 
-        <% include MainNav %>
+    <div class="nav-panel">
+		<% include MainNav %>
+	</div>
+
+	<div id="mob-icon"></div>
 
 </header>

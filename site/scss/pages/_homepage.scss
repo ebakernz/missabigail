@@ -7,12 +7,13 @@
 
 	.wrapper {
 		height: 100%;
+		min-height: 105%;
 	}
 
 	.slides {
 		position: absolute;
 		top: 0;
-		height: 100%;
+		min-height: 100%;
 	}
 
 }

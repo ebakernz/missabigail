@@ -78,6 +78,18 @@ class Page_Controller extends ContentController {
 		}
 	}
 
+	/* Gallery filter links into mainnav */
+	function GalleryCategoryToMenu($ID) {
+		if($page == GalleryPage::get->byID($ID)) {
+			$categories = Category::get()->filter('GalleryPageID' => $ID);
+			Debug::show($categories);
+
+			return $categories;
+		} else {
+			return false;
+		}
+	}
+
 	function ShowAllFooterLinks() {
 		return FooterLink::get();
 	}

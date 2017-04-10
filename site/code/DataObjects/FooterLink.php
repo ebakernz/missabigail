@@ -31,8 +31,8 @@ class FooterLink extends DataObject {
 			new TextField('FooterText', 'Footer content'),
 			new TextField('FooterTextTitle', 'Footer Link Title Attribute'),
 			new CheckboxField('Bold', 'Make text bold'),
-			new TreeDropdownField('FooterPageLink', 'Link to page:', 'SiteTree'),
-			new DropdownField('FooterColumn',
+			new TreeDropdownField('FooterPageLink', 'Link to page:', 'SiteTree')
+			/*new DropdownField('FooterColumn',
 								'Column Number',
 								array(
 										'Column1' => 'Column 1',
@@ -42,7 +42,7 @@ class FooterLink extends DataObject {
 										
 									)						
 								
-								)	
+								)*/	
 			);
     }
 	

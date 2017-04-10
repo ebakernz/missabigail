@@ -47,7 +47,7 @@ class GalleryPage_Controller extends Page_Controller {
 	}
 
 	public function GalleryItems() {
-		return $this->items;
+		return $this->items->filter(array('GalleryPageID' => $this->ID));
 	}
 
 	public function FilterActive($name) {

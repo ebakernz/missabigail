@@ -4,7 +4,7 @@ class GalleryItem extends DataObject {
 	
 	private static $db = array(
 		'Title' => 'Text',
-		'ColWidth' => "Enum('Single,Double')",
+		'ColWidth' => 'Varchar',
 		'SortOrder' => 'Int'
 	);
 
@@ -35,7 +35,7 @@ class GalleryItem extends DataObject {
 			new OptionsetField(
 				'ColWidth', 
 				'Column width', 
-				singleton('GalleryItem')->dbObject('ColWidth')->enumValues(),
+				array('Single' => 'Portrait', 'Double' => 'Landscape'),
 				'Single'
 			),
 			$cat

@@ -7,7 +7,7 @@
 
                 <div class="contact-details">
 
-                    <h1 class="script-font">Get in touch</h1>
+                    $Content
 
                     <p class="cf">
                     	<i class="fa fa-map-marker"></i>

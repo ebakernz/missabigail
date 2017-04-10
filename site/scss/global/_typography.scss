@@ -6,15 +6,17 @@
  * you should put those in layout.css
  **/
  
+@include font-face('BernhardModernStd-Roman', '../fonts/BernhardModernStd-Roman', $exts: eot woff ttf svg); 
+@include font-face('ShelleyAllegroScript', '../fonts/ShelleyAllegroScript', $exts: eot woff2 woff ttf svg);
 
 body,
 html {
-	font-family: 'Playfair Display', 'Times New Roman', serif;
+	font-family: 'BernhardModernStd-Roman', 'Times New Roman', serif;
 	font-size: 14px;
 }
 
 .script-font {
-	font-family: Parisienne;
+	font-family: ShelleyAllegroScript;
 }
 .burgundy {
 	color: $burgundy;
@@ -23,11 +25,11 @@ html {
 	color: $pink;
 }
 .script-font-burgundy {
-	font-family: Parisienne;
+	font-family: ShelleyAllegroScript;
 	color: $burgundy;
 }
 .script-font-pink {
-	font-family: Parisienne;
+	font-family: ShelleyAllegroScript;
 	color: $pink;
 }
 

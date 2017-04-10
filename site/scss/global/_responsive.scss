@@ -13,15 +13,12 @@
 	}
 
 	/* Page sidebar slider */
-	.sidebar {
-		&.w1x2-left-spaced {
-			margin: 0;
-			width: 50%;
-		}
-
-		.slide {
-			max-width: 100%;
-		}
+	.w1x2-left-spaced {
+		margin: 0;
+		width: 50%;
+	}
+	.sidebar .slide {
+		max-width: 100%;
 	}
 
 	/* Gallery page */
@@ -96,13 +93,18 @@
 
 }
 
+@media (max-width: 900px) {
+
+
+}
+
 @media (max-width: 780px) {
 
 	.liner { padding: 20px; }
 
 	/* General page */
 	.w1x2-right-spaced,
-	.sidebar.w1x2-left-spaced {
+	.w1x2-left-spaced {
 		width: 100%;
 	}
 

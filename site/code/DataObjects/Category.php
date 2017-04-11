@@ -31,8 +31,12 @@ class Category extends DataObject {
 
 	public function URLName() {
 	//	'Leah & Stathie'	'leah-&-stathie'
-		return strtolower(str_replace(' ', '-', $this->Title));
+		$str = str_replace('&', 'and', $this->Title);
+		return strtolower(str_replace(' ', '-', $str));
 	}
 
+	public function GalleryPageLink() {
+		return $this->GalleryPage()->Link();
+	}
 	
 }

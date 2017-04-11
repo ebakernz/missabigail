@@ -3,8 +3,8 @@
     <div class="inner cf">
     
         <ul class="float-left w1x2"> 
-            <% loop ShowAllFooterLinks %>
-                <li><a href="$ShowPageLink">$FooterText</a></li>
+            <% loop Menu(1) %>
+                <li><a href="$ShowPageLink">$MenuTitle.XML</a></li>
             <% end_loop %>
         </ul>
 

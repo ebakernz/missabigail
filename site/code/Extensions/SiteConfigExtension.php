@@ -47,7 +47,7 @@ class SiteConfigExtension extends DataExtension {
 		$fields->addFieldToTab('Root.SocialMedia', TextField::create('Instagram', 'Instagram URL'));
 		$fields->addFieldToTab('Root.SocialMedia', TextField::create('Pinterest', 'Pinterest URL'));
 		
-		// ================ Footer Links
+		/*// ================ Footer Links
 		$FooterGridFieldConfig = GridFieldConfig::create()->addComponents(
 			new GridFieldToolbarHeader(),
 			new GridFieldAddNewButton('toolbar-header-right'),
@@ -59,7 +59,7 @@ class SiteConfigExtension extends DataExtension {
 			new GridFieldSortableRows('SortID')
 		);
 	
-		$fields->addFieldsToTab('Root.Footer', new GridField("FooterLinks", "Footer Section", $this->ShowFooterLinks(), $FooterGridFieldConfig) );
+		$fields->addFieldsToTab('Root.Footer', new GridField("FooterLinks", "Footer Section", $this->ShowFooterLinks(), $FooterGridFieldConfig) );*/
 	}
 
 	function ShowFooterLinks() {

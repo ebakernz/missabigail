@@ -1,6 +1,6 @@
 <% include DocumentHead %>
 
-	<div class="wrapper responsive-bg mobile-bg"
+	<div class="wrapper responsive-bg"
 		<% if BackgroundImage %>
 			style=""
 			data-large="$BackgroundImage.setWidth(2000).URL"

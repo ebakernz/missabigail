@@ -144,20 +144,6 @@ function ResponsiveBG(){
 
 }
 
-function MobileBG() {
-
-	$('.mobile-bg').each( function( key, panel ){
-
-        panel = $(panel);
-        var panelWidth = panel.outerWidth();
-        
-        if( panelWidth < 600 ){
-            panel.css({'background-image': 'none' });
-        }
-
-    });
-}
-
 function Slides() {
 
 	// Click on slide nav overrides timer
@@ -303,7 +289,6 @@ function MobileNavExpansion() {
 
 $(document).ready( function() {
 	ResponsiveBG();
-	MobileBG();
 	if( $(window).width() > 500 ) {
 		Popups();
 	}
@@ -314,7 +299,6 @@ $(document).ready( function() {
 
 $(window).resize(function(){
     ResponsiveBG();
-    MobileBG();
     ResizePopups();
 });
 

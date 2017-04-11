@@ -63,7 +63,7 @@ class GalleryPage_Controller extends Page_Controller {
 	}
 
 	public function filter() {
-		
+
 		$filter = Controller::curr()->getRequest()->param('ID');
 		
 		if(!$filter) {
@@ -73,13 +73,11 @@ class GalleryPage_Controller extends Page_Controller {
 		// FILTER BY CATEGORY
 		$filter = str_replace('-', ' ', $filter);
 		$filter = ucwords($filter);
-		Debug::show($filter);
+		// Check for and's
+		$filter = str_replace('And', '&', $filter);
 
 		if( $category = Category::get()->filter(array('Title' => $filter))->first() ) {
-			Debug::show($category);
 			$items = $category->Items()->sort('SortOrder', 'ASC');
-			
-			Debug::show($items);
 		}
 
 		if( $items ) {

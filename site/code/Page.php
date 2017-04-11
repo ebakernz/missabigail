@@ -69,7 +69,7 @@ class Page_Controller extends ContentController {
 			Requirements::css('site/production/index.css');
 		}
 
-		Requirements::css('https://fonts.googleapis.com/css?family=Parisienne|Playfair+Display:400,700');
+	//	Requirements::css('https://fonts.googleapis.com/css?family=Parisienne|Playfair+Display:400,700|Lora');
 	}
 
 	function SingleSlide() {
@@ -78,12 +78,14 @@ class Page_Controller extends ContentController {
 		}
 	}
 
+	function ActiveGalleryNav($ID) {
+		if($this->ID == $ID) return true;
+	}
+
 	/* Gallery filter links into mainnav */
 	function GalleryCategoryToMenu($ID) {
-		if($page == GalleryPage::get->byID($ID)) {
-			$categories = Category::get()->filter('GalleryPageID' => $ID);
-			Debug::show($categories);
-
+		if($page = GalleryPage::get()->byID($ID)) {
+			$categories = Category::get()->filter(array('GalleryPageID' => $ID));
 			return $categories;
 		} else {
 			return false;

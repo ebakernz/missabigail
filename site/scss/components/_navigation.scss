@@ -19,8 +19,9 @@
     }
 
     ul li:hover {
+    	&.current,
 		> a {
-			background: $lightgrey;
+			/*background: $lightgrey;*/
 			color: $burgundy;
 		}
 
@@ -32,28 +33,36 @@
 	li {
 		display: block;
 		float: left;
-		margin: 0 50px;
+		margin: 0 27px;
 		position: relative;
+
+		&.section a { color: $burgundy; }
 	}
 
 	a {
-		font-size: 1.2em;
+		font-size: 1.3em;
 		font-weight: bold;
 		color: $black;
 		text-transform: uppercase;
 		text-decoration: none;
-		padding: 6px 40px;	
+		padding: 6px 37px 16px;	
+
+		&:hover {
+			color: $burgundy;
+		}
 	}
 
 	ul.secondary {
 		display: none;
 		position: absolute;
-		top: 49px;
+		top: 35px;
 		z-index: 99;
+		width: 100%;
 
 		li {
 			float: none;
 			position: relative;
+			margin: 0;
 			
 			a {			
 				display: block;
@@ -61,10 +70,12 @@
 				color: $black;
 				font-size: 1.4em;
 				font-weight: 400;
-				width: 195px;
-				padding: 8px 15px;		
+				text-transform: none;
+				text-align: left;
+				padding: 8px 36px;		
 				line-height: 20px;
 				margin: 0;
+				width: 130px;
 				
 				&:hover, &:focus {
 					text-decoration: none;

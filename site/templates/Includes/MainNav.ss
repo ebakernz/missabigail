@@ -1,14 +1,15 @@
 <nav class="mainnav">
 	<ul class="cf">
 		<% loop Menu(1) %>
-          <li class="$LinkingMode">
+          <li class="<% if Top.ActiveGalleryNav($ID) %>section<% else %>$LinkingMode<% end_if %>">
           	<a href="$Link">$MenuTitle.XML</a>
 
-          	<% if GalleryCategoryToMenu($ID) %>
+          	<% if Top.GalleryCategoryToMenu($ID) %>
           		<ul class="secondary">
-	          		<% loop GalleryCategoryToMenu($ID) %>
-	          			<li class="$LinkingMode"><a href="$Link">$MenuTitle.XML</a></li>
+	          		<% loop Top.GalleryCategoryToMenu($ID) %>
+	          		 <li class="$LinkingMode"><a href="{$GalleryPageLink}filter/$URLName">$Title</a></li>
 	          		<% end_loop %>
+                
 	          	</ul>
           	<% end_if %>
 

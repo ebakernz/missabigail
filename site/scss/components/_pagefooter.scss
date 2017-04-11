@@ -21,7 +21,7 @@ footer {
 		}
 
 		a {
-			color: $burgundy;
+			font-size: 1.2em;
 			text-decoration: none;
 			padding: 0 15px 0 0;
 		}
@@ -44,9 +44,10 @@ footer {
 	}
 
 	.copy p {
-		font-size: 0.9em;
+		font-weight: bold;
 		color: $burgundy;
 		text-align: center;
+	    margin-top: 5px;
 
 		span {
 			display: inline-block;

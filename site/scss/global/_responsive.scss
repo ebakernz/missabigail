@@ -2,6 +2,16 @@
 	Responsive
 */
 
+@media (max-width: 1700px) {
+
+	/* Gallery page */
+	.GalleryPage #popups .popup-content.slides .slide .item {
+		&.portrait { width: 60%; }
+		&.landscape { height: 80%; }
+	}
+
+}
+
 @media (max-width: 1400px) {
 
 	.inner {

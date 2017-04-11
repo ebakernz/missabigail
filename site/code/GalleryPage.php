@@ -19,13 +19,13 @@ class GalleryPage extends Page {
 		// Categories
 		$fields->addFieldToTab('Root.Categories', CheckboxField::create('ShowFilter', 'Show filters'));
 
-		$fdGridFieldConfig = GridFieldConfig_RecordEditor::create(10);		
+		$fdGridFieldConfig = GridFieldConfig_RecordEditor::create(300);		
     	$fdGridFieldConfig->addComponent( new GridFieldSortableRows('SortOrder') );	
 		$fdGridField = new GridField("Categories", "Category", $this->Categories(), $fdGridFieldConfig);
 		$fields->addFieldToTab('Root.Categories', $fdGridField);
 
 		// Items
-		$fdGridFieldConfig = GridFieldConfig_RecordEditor::create(100);		
+		$fdGridFieldConfig = GridFieldConfig_RecordEditor::create(300);		
     	$fdGridFieldConfig->addComponent( new GridFieldSortableRows('SortOrder') );	
 		$fdGridField = new GridField("Items", "GalleryItem", $this->Items(), $fdGridFieldConfig);
 		$fields->addFieldToTab('Root.GalleryItems', $fdGridField);

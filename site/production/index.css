@@ -2176,19 +2176,21 @@ input[type="submit"]:hover {
   .mainnav ul li:hover > ul.secondary {
     display: block; }
   .mainnav li {
-    display: block;
-    float: left;
+    display: inline-block;
     margin: 0 27px;
     position: relative; }
     .mainnav li.section a {
       color: #942433; }
   .mainnav a {
+    display: block;
     font-size: 1.3em;
     font-weight: bold;
     color: #000000;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 6px 37px 16px; }
+    text-align: center;
+    padding: 6px 0 16px;
+    width: 180px; }
     .mainnav a:hover {
       color: #942433; }
   .mainnav ul.secondary {
@@ -2200,7 +2202,8 @@ input[type="submit"]:hover {
     .mainnav ul.secondary li {
       float: none;
       position: relative;
-      margin: 0; }
+      margin: 0;
+      width: 100%; }
       .mainnav ul.secondary li a {
         display: block;
         background: rgba(255, 255, 255, 0.8);
@@ -2208,11 +2211,13 @@ input[type="submit"]:hover {
         font-size: 1.4em;
         font-weight: 400;
         text-transform: none;
-        text-align: left;
-        padding: 8px 36px;
+        /*text-align: left;
+				padding: 8px 36px;
+				width: 130px;*/
+        padding: 8px 0;
         line-height: 20px;
-        margin: 0;
-        width: 130px; }
+        width: 100%;
+        margin: 0; }
         .mainnav ul.secondary li a:hover, .mainnav ul.secondary li a:focus {
           text-decoration: none;
           background: #942433;

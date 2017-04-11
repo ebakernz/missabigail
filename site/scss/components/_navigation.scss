@@ -31,8 +31,7 @@
 	}
 
 	li {
-		display: block;
-		float: left;
+		display: inline-block;
 		margin: 0 27px;
 		position: relative;
 
@@ -40,12 +39,15 @@
 	}
 
 	a {
+		display: block;
 		font-size: 1.3em;
 		font-weight: bold;
 		color: $black;
 		text-transform: uppercase;
 		text-decoration: none;
-		padding: 6px 37px 16px;	
+		text-align: center;
+		padding: 6px 0 16px;
+		width: 180px;	
 
 		&:hover {
 			color: $burgundy;
@@ -63,6 +65,7 @@
 			float: none;
 			position: relative;
 			margin: 0;
+			width: 100%;
 			
 			a {			
 				display: block;
@@ -71,11 +74,14 @@
 				font-size: 1.4em;
 				font-weight: 400;
 				text-transform: none;
-				text-align: left;
-				padding: 8px 36px;		
+				/*text-align: left;
+				padding: 8px 36px;
+				width: 130px;*/
+				padding: 8px 0;		
 				line-height: 20px;
+				width: 100%;
 				margin: 0;
-				width: 130px;
+				
 				
 				&:hover, &:focus {
 					text-decoration: none;

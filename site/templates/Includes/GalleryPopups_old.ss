@@ -7,13 +7,20 @@
 				<% loop GalleryItems %>
 
 					<div class="slide">
-						<img class="item $ImageOrientation"
+						<div class="item $ImageOrientation ResponsiveBG" 
 							<% if ImageOrientation == 'portrait' %>
-								src="$Image.setheight(1200).URL"
+								style="background-image: url('$Image.setHeight(1200).URL')" 
+								data-large="$Image.setHeight(2000).URL"
+								data-medium="$Image.setHeight(1200).URL"
+								data-small="$Image.setHeight(700).URL"
 							<% else %>
-								src="$Image.setWidth(1200).URL"
+								style="background-image: url('$Image.setWidth(1200).URL')" 
+								data-large="$Image.setWidth(2000).URL"
+								data-medium="$Image.setWidth(1200).URL"
+								data-small="$Image.setWidth(700).URL"
 							<% end_if %>
-						/>
+
+							alt="$Title"></div>
 					</div>
 
 				<% end_loop %>

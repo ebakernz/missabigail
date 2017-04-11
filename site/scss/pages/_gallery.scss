@@ -19,7 +19,7 @@
 	}
 }
 
-.item {
+.grid .item {
 	display: block;
 	margin-right: 1%;
 	margin-bottom: 10px;
@@ -51,22 +51,18 @@
 			height: 100%;
 			background: rgba(255,255,255,0.8);
 
-			.item { 
-				position: absolute; 
-				margin: auto;
+			.item {
+				display: block;
+				@include CenterPositioning();
 
 				&.portrait {
 					height: 100%;
-					width: 50%;
-					left: 0;
-					right: 0;
+					margin: 0 auto;
 				}
 
 				&.landscape {
 					width: 100%;
-					height: 100%;
-					top: 0;
-					bottom: 0;
+					margin: auto 0;
 				}
 			}	
 		}

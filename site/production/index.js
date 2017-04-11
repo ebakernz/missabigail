@@ -257,20 +257,59 @@ function Popups() {
 }
 
 function ResizePopups() {
-	var windowWidth = $(window).width();
-	var windowHeight = $(window).height();
+	
+	//Get container and image
+    var image = $('#popups .popup-content.slides .slide .item').first();
+    var container = $(window);
 
-	if(windowHeight < 1100 || windowWidth < 1100 ) {
-		$('#popups .inner').attr('class', 'inner resize900');
-	}
+    //Get container dimensions
+    var container_height = container.height();
+    var container_width = container.width();
 
-	if(windowHeight < 900 || windowWidth < 900 ) {
-		$('#popups .inner').attr('class', 'inner resize700');
-	}
+    console.log('container_height ' + container_height + ' container_width ' + container_width );
 
-	if(windowHeight < 600 || windowWidth < 600 ) {
-		$('#popups .inner').attr('class', 'inner resize500');
-	}
+    //Get image dimensions
+    var image_height = image.height();
+    var image_width = image.width();
+
+    console.log('image_height ' + image_height + ' image_width ' + image_width );
+
+    //Calculate the center of image since origin is at x:50% y:50%
+    var image_center_left = image_width / 2.0;
+    var image_center_top = image_height / 2.0;
+
+    console.log('image_center_left ' + image_center_left + ' image_center_left ' + image_center_left );
+
+    //Calculate scaling factor
+    var zoom_factor;
+
+    //Check to determine whether to stretch along width or heigh
+    if(image_height > image_width)
+        zoom_factor = container_height / image_height;
+    else
+        zoom_factor = container_width / image_width;
+
+    console.log( zoom_factor );
+
+    /*//Zoom by zoom_factor
+    $panzoom.panzoom("zoom", zoom_factor, {animate: false});
+
+    //Calculate new image dimensions after zoom
+    image_width = image_width * zoom_factor;
+    image_height = image_height * zoom_factor;
+
+    //Calculate offset of the image after zoom
+    var image_offset_left = image_center_left - (image_width / 2.0);
+    var image_offset_top = image_center_top - (image_height / 2.0);
+
+    //Calculate desired offset for image
+    var new_offset_left = (container_width - image_width) / 2.0;
+    var new_offset_top = (container_height - image_height) / 2.0;
+
+    //Pan to set desired offset for image
+    var pan_left = new_offset_left - image_offset_left;
+    var pan_top = new_offset_top - image_offset_top;
+    $panzoom.panzoom("pan", pan_left, pan_top);*/
 
 }
 

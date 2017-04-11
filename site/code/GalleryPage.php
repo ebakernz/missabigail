@@ -25,7 +25,7 @@ class GalleryPage extends Page {
 		$fields->addFieldToTab('Root.Categories', $fdGridField);
 
 		// Items
-		$fdGridFieldConfig = GridFieldConfig_RecordEditor::create(10);		
+		$fdGridFieldConfig = GridFieldConfig_RecordEditor::create(100);		
     	$fdGridFieldConfig->addComponent( new GridFieldSortableRows('SortOrder') );	
 		$fdGridField = new GridField("Items", "GalleryItem", $this->Items(), $fdGridFieldConfig);
 		$fields->addFieldToTab('Root.GalleryItems', $fdGridField);

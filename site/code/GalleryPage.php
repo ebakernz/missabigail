@@ -73,12 +73,16 @@ class GalleryPage_Controller extends Page_Controller {
 		// FILTER BY CATEGORY
 		$filter = str_replace('-', ' ', $filter);
 		$filter = ucwords($filter);
+		Debug::show($filter);
 
 		if( $category = Category::get()->filter(array('Title' => $filter))->first() ) {
+			Debug::show($category);
 			$items = $category->Items()->sort('SortOrder', 'ASC');
-		} 
+			
+			Debug::show($items);
+		}
 
-		if($items) {
+		if( $items ) {
 
 			$data = array(
 				'GalleryItems' => $items

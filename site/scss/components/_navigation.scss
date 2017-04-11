@@ -13,19 +13,68 @@
     padding: 10px 0 0;
     height: 40px;
 
+    ul {
+    	width: 80%;
+    	margin: 0 auto;
+    }
+
+    ul li:hover {
+		> a {
+			background: $lightgrey;
+			color: $burgundy;
+		}
+
+		> ul.secondary {
+			display: block;
+		}
+	}
+
 	li {
-		display: inline;
-		text-align: center;
+		display: block;
+		float: left;
+		margin: 0 50px;
+		position: relative;
 	}
 
 	a {
 		font-size: 1.2em;
+		font-weight: bold;
 		color: $black;
 		text-transform: uppercase;
 		text-decoration: none;
-		padding: 6px 40px;
-		margin: 0 50px;
+		padding: 6px 40px;	
 	}
+
+	ul.secondary {
+		display: none;
+		position: absolute;
+		top: 49px;
+		z-index: 99;
+
+		li {
+			float: none;
+			position: relative;
+			
+			a {			
+				display: block;
+				background: rgba(255,255,255,0.8);
+				color: $black;
+				font-size: 1.4em;
+				font-weight: 400;
+				width: 195px;
+				padding: 8px 15px;		
+				line-height: 20px;
+				margin: 0;
+				
+				&:hover, &:focus {
+					text-decoration: none;
+					background: $burgundy;
+					color: #fff;
+				}
+			}
+		}		
+	}
+
 }
 
 #mob-icon {

@@ -1,11 +1,11 @@
 <nav class="mainnav">
-	<ul>
+	<ul class="cf">
 		<% loop Menu(1) %>
           <li class="$LinkingMode">
           	<a href="$Link">$MenuTitle.XML</a>
 
           	<% if GalleryCategoryToMenu($ID) %>
-          		<ul>
+          		<ul class="secondary">
 	          		<% loop GalleryCategoryToMenu($ID) %>
 	          			<li class="$LinkingMode"><a href="$Link">$MenuTitle.XML</a></li>
 	          		<% end_loop %>

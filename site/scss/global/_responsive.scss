@@ -45,7 +45,6 @@
 		height: 350px;
 	}
 
-
 }
 
 @media (max-width: 1200px) {
@@ -62,6 +61,8 @@
 @media (max-width: 1100px) {
 
 	.liner { padding: 30px; }
+
+	.mainnav ul { width: 100%; }
 
 	/* Gallery page */
 	.GalleryPage .grid .item { height: 300px;	}

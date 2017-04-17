@@ -69,13 +69,15 @@ class Page_Controller extends ContentController {
 			Requirements::css('site/production/index.css');
 		}
 
-	//	Requirements::css('https://fonts.googleapis.com/css?family=Parisienne|Playfair+Display:400,700|Lora');
+		Requirements::css('https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Condensed:400,400i,700,700i');
 	}
 
 	function SingleSlide() {
-		if($this->Slides()->Count() == 1) {
-			return true;
-		}
+		if($this->Slides()->Count() == 1) return true;
+	}
+
+	function MultiTestimonials() {
+		if($this->Testimonials()->Count() > 1) return true;
 	}
 
 	function ActiveGalleryNav($ID) {

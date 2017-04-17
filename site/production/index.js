@@ -167,7 +167,7 @@ function Slides() {
 	function changeSlides( mode, destination ){
 
 		if( mode == 'first') {
-			$('.slides .slide:eq(0)').css({ 'z-index' : 3 });
+			$('.slides .slide:eq(0)').css({ 'z-index' : 3, 'opacity': 1 });
 			return false;
 		}
 
@@ -212,7 +212,7 @@ function Slides() {
 		$('.slides .slide:eq(' + current + ')').css({ 'z-index' : 2 });
 		
 		// move next slide to top with 0% opacity and then animate in
-		$('.slides .slide:eq(' + next + ')').css({ 'z-index' : 3, 'opacity' : 0 }).animate({ 'opacity' : 1 }, 1000);
+		$('.slides .slide:eq(' + next + ')').css({ 'z-index' : 3 }).animate({ 'opacity' : 1 }, 500);
 		
 		// --- UPDATE COUNTER
 		current = next;	
@@ -234,10 +234,17 @@ function Slides() {
 		
 		// run function on load
 		changeSlides( 'first' );
-		
+
 		// initiate timed slide, accept for gallery page (hidden, only change on click)
 		if( $('.GalleryPage').length == 0 ) {
-			var setSliderTimer = setInterval( changeSlides, 7000 );
+			// default timing every 7 secs
+			var transition = 7000;
+			// If general page slider, transition every 4 secs
+			if( $('.sidebar .slides').length > 0 ) {
+				var transition = 4000;
+			} 
+
+			var setSliderTimer = setInterval( changeSlides, transition );
 		}
 	}
 }
@@ -254,63 +261,12 @@ function Popups() {
         $('#popups').hide().fadeOut(100);
     //    $('#popups .popup-content').empty();
     });
-}
 
-function ResizePopups() {
-	
-	//Get container and image
-    var image = $('#popups .popup-content.slides .slide .item').first();
-    var container = $(window);
-
-    //Get container dimensions
-    var container_height = container.height();
-    var container_width = container.width();
-
-    console.log('container_height ' + container_height + ' container_width ' + container_width );
-
-    //Get image dimensions
-    var image_height = image.height();
-    var image_width = image.width();
-
-    console.log('image_height ' + image_height + ' image_width ' + image_width );
-
-    //Calculate the center of image since origin is at x:50% y:50%
-    var image_center_left = image_width / 2.0;
-    var image_center_top = image_height / 2.0;
-
-    console.log('image_center_left ' + image_center_left + ' image_center_left ' + image_center_left );
-
-    //Calculate scaling factor
-    var zoom_factor;
-
-    //Check to determine whether to stretch along width or heigh
-    if(image_height > image_width)
-        zoom_factor = container_height / image_height;
-    else
-        zoom_factor = container_width / image_width;
-
-    console.log( zoom_factor );
-
-    /*//Zoom by zoom_factor
-    $panzoom.panzoom("zoom", zoom_factor, {animate: false});
-
-    //Calculate new image dimensions after zoom
-    image_width = image_width * zoom_factor;
-    image_height = image_height * zoom_factor;
-
-    //Calculate offset of the image after zoom
-    var image_offset_left = image_center_left - (image_width / 2.0);
-    var image_offset_top = image_center_top - (image_height / 2.0);
-
-    //Calculate desired offset for image
-    var new_offset_left = (container_width - image_width) / 2.0;
-    var new_offset_top = (container_height - image_height) / 2.0;
-
-    //Pan to set desired offset for image
-    var pan_left = new_offset_left - image_offset_left;
-    var pan_top = new_offset_top - image_offset_top;
-    $panzoom.panzoom("pan", pan_left, pan_top);*/
-
+    // bind esc key to close
+	$(document).keyup(function(e){		
+		if(e.keyCode === 27)
+			$('#popups').hide().fadeOut(500);
+	});
 }
 
 function MobileNavExpansion() {
@@ -325,25 +281,114 @@ function MobileNavExpansion() {
 }
 
 
+function TestimonialSlider() {
+
+	// Click on slide nav overrides timer
+	$('.testimonials .slidenav a').click( function(evt) {
+		evt.preventDefault();
+		changeSlides( 'click', $(this).attr('href') );
+		clearInterval( setSliderTimer );		
+	});
+	
+	function changeSlides( mode, destination ){
+
+		if( mode == 'first') {
+			$('.testimonials .quote:eq(0)').css({ 'z-index' : 3, 'opacity': 1 });
+			return false;
+		}
+		
+		// if no destination specified
+		if( mode == 'click' ){			
+			if( destination == 'prev' ) {				
+				if( current == 0 ){
+					next = numQuotes;
+				} else {
+					next = current - 1;
+				}				
+			} else {
+				// if at last element
+				if( current == numQuotes ){
+					next = 0;
+				} else {
+					next = current + 1;
+				}
+			}			
+		} else {
+			// if at last element
+			if( current == numQuotes ){
+				next = 0;
+			} else {
+				next = current + 1;
+			}
+		}
+				
+		// --- UPDATE SLIDER		
+		// move all to bottom
+		$('.testimonials .quote').css({ 'z-index' : 1, 'opacity': 0 });
+		
+		// move current on top of bottom stack
+		$('.testimonials .quote:eq(' + current + ')').css({ 'z-index' : 2, 'opacity': 0 });
+		
+		// move next quote to top with 0% opacity and then animate in
+		$('.testimonials .quote:eq(' + next + ')').css({ 'z-index' : 3, 'opacity' : 0 }).animate({ 'opacity' : 1 }, 500);
+		
+		// --- UPDATE COUNTER
+		current = next;	
+	
+		
+	}
+	
+	// number of slides
+	var numQuotes = $('.testimonials .quote').length - 1;
+
+	// Check if there is more than 1 slide, so don't flash single image
+	if( numQuotes ) {
+	
+		// current slider
+		var current = 0;
+		
+		// declare variable
+		var next = 1;
+		
+		// run function on load
+		changeSlides( 'first' );
+
+		// initiate timed slide
+		var setSliderTimer = setInterval( changeSlides, 10000 );
+	}
+}
+
+
 
 $(document).ready( function() {
+	// Change out images based on screen size
 	ResponsiveBG();
 	if( $(window).width() > 500 ) {
+		// only do popup gallery if bigger than 500px
 		Popups();
 	}
+
+	// Only initiate slider if more than 1 slide
 	if( $('.slides .slide').length > 0 ) Slides();
-	ResizePopups();
+
+	// Hide/show nav for smaller devices
 	MobileNavExpansion();
+
+	// Long page
+	if( $('.wrapper').height() > $(window).height() ) $('.wrapper').addClass('long');
+
+	// Testimonial slider
+	if( $('.quote').length > 1 ) TestimonialSlider();
 });
 
+// when screen is changed, recheck
 $(window).resize(function(){
     ResponsiveBG();
-    ResizePopups();
 });
 
-$(window).scroll( function() {
+/*$(window).scroll( function() {
     ResponsiveBG();
-});
+});*/
 
 /*
 function Slide( direction, target ){

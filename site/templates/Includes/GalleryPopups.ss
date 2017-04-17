@@ -1,5 +1,5 @@
 <div id="popups" class="gallery">
-	<div class="close fa fa-times"></div>
+	<div class="close"></div>
 	<div class="inner">
 	
 		<div class="popup-content slides">

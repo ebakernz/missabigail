@@ -3,24 +3,24 @@
 */
 
 .script-font {
-	font-family: Parisienne;
+	font-family: $scriptfont;
 }
 .script-font-burgundy {
-	font-family: Parisienne;
-	color: #942433;
+	font-family: $scriptfont;
+	color: $burgundy;
 }
 .script-font-pink {
-	font-family: Parisienne;
-	color: #e4484f;
+	font-family: $scriptfont;
+	color: $pink;
 }
 .burgundy-text {
-	color: #942433;
+	color: $burgundy;
 }
 .pink-text {
-	color: #e4484f;
+	color: $pink;
 }
 .button {
-	background: #FADFBD;
+	background: $nude;
 	padding: 8px 12px;
 	display: inline-block;
 }

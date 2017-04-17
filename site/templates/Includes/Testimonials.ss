@@ -9,4 +9,11 @@
 		</div>
 
 	<% end_loop %>
+
+	<% if MultiTestimonials %>
+		<div class="slidenav">
+			<a href="prev" class="left"><i class="fa fa-angle-left"></i></a>
+			<a href="next" class="right"><i class="fa fa-angle-right"></i></a>
+		</div>
+	<% end_if %>
 </div>

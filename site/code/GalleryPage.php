@@ -17,7 +17,7 @@ class GalleryPage extends Page {
 		$fields->removeByName('Slides');	
 		
 		// Categories
-		$fields->addFieldToTab('Root.Categories', CheckboxField::create('ShowFilter', 'Show filters'));
+	//	$fields->addFieldToTab('Root.Categories', CheckboxField::create('ShowFilter', 'Show filters'));
 
 		$fdGridFieldConfig = GridFieldConfig_RecordEditor::create(300);		
     	$fdGridFieldConfig->addComponent( new GridFieldSortableRows('SortOrder') );	
@@ -43,7 +43,7 @@ class GalleryPage_Controller extends Page_Controller {
 
 	public function init() {
 		parent::init();
-		$this->items = GalleryItem::get()->sort('SortOrder', 'ASC');
+		$this->items = GalleryItem::get()->sort('SortOrder', 'DESC');
 	}
 
 	public function GalleryItems() {
@@ -67,7 +67,7 @@ class GalleryPage_Controller extends Page_Controller {
 		$filter = Controller::curr()->getRequest()->param('ID');
 		
 		if(!$filter) {
-			return GalleryItem::get()->sort('SortOrder', 'ASC');
+			return GalleryItem::get()->sort('SortOrder', 'DESC');
 		}
 
 		// FILTER BY CATEGORY
@@ -77,7 +77,7 @@ class GalleryPage_Controller extends Page_Controller {
 		$filter = str_replace('And', '&', $filter);
 
 		if( $category = Category::get()->filter(array('Title' => $filter))->first() ) {
-			$items = $category->Items()->sort('SortOrder', 'ASC');
+			$items = $category->Items()->sort('SortOrder', 'DESC');
 		}
 
 		if( $items ) {

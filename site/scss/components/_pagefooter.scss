@@ -21,10 +21,9 @@ footer {
 		}
 
 		a {
-			font-size: 1.2em;
-			color: $black;
+			font-size: 1.1em;
+			color: $burgundy;
 			text-decoration: none;
-			text-transform: uppercase;
 			padding: 0 15px 0 0;
 		}
 
@@ -45,11 +44,10 @@ footer {
 		}
 	}
 
-	.copy p {
-		font-weight: bold;
+	.copy {
 		color: $burgundy;
 		text-align: center;
-	    margin-top: 5px;
+	    margin: 0 15px 0 0;
 
 		span {
 			display: inline-block;

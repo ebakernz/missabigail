@@ -26,6 +26,8 @@
 	height: 450px;
 	overflow: hidden;
 	@include OptimiseBgImg();
+	cursor: hand;
+	cursor: pointer;
 
 	&.portrait {
 		width: 24%;
@@ -39,9 +41,16 @@
 
 .GalleryPage #popups {
 
-	.close{ color: $burgundy; }
+	.close{ 
+		color: $burgundy; 
+		background-image: url('../images/close.png');
+		@include OptimiseBgImg(contain);
+		width: 30px;
+		height: 30px;
+	}
 
 	.popup-content.slides {
+		background: rgba(255,255,255,0.8);
 		/*height: 1000px;
 		width: 1000px;*/
 		overflow: inherit;
@@ -49,7 +58,7 @@
 		.slide {
 			width: 100%;
 			height: 100%;
-			background: rgba(255,255,255,0.8);
+			opacity: 0;
 
 			.item {
 				display: block;

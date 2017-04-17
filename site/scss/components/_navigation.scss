@@ -10,8 +10,7 @@
 	background: -webkit-linear-gradient(top, rgba(255,255,255,0.85) 1%,rgba(255,255,255,0.85) 20%,rgba(255,255,255,0.65) 40%,rgba(255,255,255,0.45) 60%,rgba(255,255,255,0.25) 80%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(255,255,255,0.85) 1%,rgba(255,255,255,0.85) 20%,rgba(255,255,255,0.65) 40%,rgba(255,255,255,0.45) 60%,rgba(255,255,255,0.25) 80%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-    padding: 10px 0 0;
-    height: 40px;
+    height: 45px;
 
     ul {
     	width: 80%;
@@ -21,7 +20,6 @@
     ul li:hover {
     	&.current,
 		> a {
-			/*background: $lightgrey;*/
 			color: $burgundy;
 		}
 
@@ -32,22 +30,27 @@
 
 	li {
 		display: inline-block;
-		margin: 0 27px;
 		position: relative;
+		width: 16%;
 
 		&.section a { color: $burgundy; }
+		&:hover {
+			background: rgba(255,255,255,0.6);
+			-webkit-box-shadow: inset 0px 3px 3px 0px rgba(163,161,163,0.6);
+			-moz-box-shadow: inset 0px 3px 3px 0px rgba(163,161,163,0.6);
+			box-shadow: inset 0px 3px 3px 0px rgba(163,161,163,0.6);
+		}
 	}
 
 	a {
 		display: block;
-		font-size: 1.3em;
-		font-weight: bold;
+		font-size: 1.2em;
 		color: $black;
 		text-transform: uppercase;
 		text-decoration: none;
 		text-align: center;
-		padding: 6px 0 16px;
-		width: 180px;	
+		padding: 8px 0;
+		width: 100%;	
 
 		&:hover {
 			color: $burgundy;
@@ -57,7 +60,7 @@
 	ul.secondary {
 		display: none;
 		position: absolute;
-		top: 35px;
+		top: 37px;
 		z-index: 99;
 		width: 100%;
 
@@ -66,17 +69,17 @@
 			position: relative;
 			margin: 0;
 			width: 100%;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
 			
 			a {			
 				display: block;
-				background: rgba(255,255,255,0.8);
+				background: rgba(255,255,255,0.6);				
 				color: $black;
-				font-size: 1.4em;
+				font-size: 1.2em;
 				font-weight: 400;
 				text-transform: none;
-				/*text-align: left;
-				padding: 8px 36px;
-				width: 130px;*/
 				padding: 8px 0;		
 				line-height: 20px;
 				width: 100%;
@@ -85,8 +88,8 @@
 				
 				&:hover, &:focus {
 					text-decoration: none;
-					background: $burgundy;
-					color: #fff;
+					background: $nude60;
+					color: $burgundy;
 				}
 			}
 		}		

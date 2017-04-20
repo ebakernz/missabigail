@@ -103,13 +103,13 @@ h4 {
 .typography ul,
 .typography ol {
 	padding-left: 24px;
-}
 
-.typography li {
-	font-size: 1.4em;
-	padding: 0.2em 0;
-}
+	li {
+		font-size: 1em;
+		padding: 0.2em 0;
+	}
 
+}
 
 .button {
 	background: $nude;

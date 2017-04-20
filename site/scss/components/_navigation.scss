@@ -12,9 +12,8 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
     height: 45px;
 
-    ul {
-    	width: 80%;
-    	margin: 0 auto;
+    ul.inner {
+    	padding: 0;
     }
 
     ul li:hover {
@@ -31,11 +30,11 @@
 	li {
 		display: inline-block;
 		position: relative;
-		width: 16%;
+		width: 16.4%;
 
 		&.section a { color: $burgundy; }
 		&:hover {
-			background: rgba(255,255,255,0.6);
+			background: rgba(255,255,255,0.8);
 			-webkit-box-shadow: inset 0px 3px 3px 0px rgba(163,161,163,0.6);
 			-moz-box-shadow: inset 0px 3px 3px 0px rgba(163,161,163,0.6);
 			box-shadow: inset 0px 3px 3px 0px rgba(163,161,163,0.6);
@@ -75,7 +74,7 @@
 			
 			a {			
 				display: block;
-				background: rgba(255,255,255,0.6);				
+				background: rgba(255,255,255,0.8);				
 				color: $black;
 				font-size: 1.2em;
 				font-weight: 400;

@@ -27,6 +27,10 @@
 		margin: 0;
 		width: 50%;
 	}
+
+	/* Navigation */
+	.mainnav li { width: 15%; }
+
 	.sidebar .slide {
 		max-width: 100%;
 	}
@@ -40,6 +44,9 @@
 
 @media (max-width: 1300px) {
 
+	/* Home page */
+	/*.HomePage .wrapper { padding-bottom: 5%; }*/
+
 	/* Gallery page */
 	.GalleryPage .grid .item {
 		height: 350px;
@@ -52,7 +59,6 @@
 	/* Page header */
 	header {
 		.inner { padding: 15px 0 10px; }
-		h1 a { width: 250px; }
 	}
 
 }
@@ -64,40 +70,49 @@
 
 	.mainnav ul { width: 100%; }
 
+	/*.wrapper {
+		margin-bottom: 75px;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	footer {
+		height: 60px;
+		bottom: -75px;
+		padding-bottom: 0;;
+	}*/
+
+
 	/* Gallery page */
-	.GalleryPage .grid .item { height: 300px;	}
+	.GalleryPage .grid .item { height: 300px; }
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
 
-	/*.GalleryPage #popups .popup-content.slides .slide .item {
-		&.portrait { width: 80%; }
-		&.landscape { height: 60%; }
-	}*/
+	.mainnav ul.secondary li a {
+		font-size: 1em;
+		padding: 8px 5%;
+		width: 90%;
+	}
 
-}
-
-@media (max-height: 780px) {
-
-	/*.GalleryPage #popups .popup-content.slides .slide .item {
-		&.portrait { width: 60%; }
-		&.landscape { height: 80%; }
-	}*/
-
-}
+} 
 
 @media (max-width: 780px) {
 
 	.liner { padding: 20px; }
 
+	main {
+		padding: 20px 0;
+	}
+
 	/* General page */
+	.w1x2,
 	.w1x2-right-spaced,
 	.w1x2-left-spaced {
 		width: 100%;
 	}
 
-	.w1x2-right-spaced {
+	.w1x2 {
 		margin: 0 0 40px;
 	}
 
@@ -109,19 +124,34 @@
 		&.landscape { width: 99%; }
 	}
 
-	/*.GalleryPage #popups .popup-content.slides .slide .item {
-		&.portrait { width: 85%; }
-		&.landscape { height: 50%; }
-	}*/
+	/* Footer */
+	footer {
+		height: 110px;
+		bottom: -125px;
 
-}
+		.w1x2 { margin: 0 0 15px; }
 
-@media (max-height: 750px) {
+		ul {
+			text-align: center;
 
-/*	.GalleryPage #popups .popup-content.slides .slide .item {
-		&.portrait { width: 50%; }
-		&.landscape { height: 100%; }
-	}*/
+			a {
+				padding: 0 2%;
+			}
+		}	
+
+		.copy {
+			clear: right;
+			text-align: center;
+			float: none;
+			margin: 0;
+		}
+
+		.social-links {
+			width: 90px;
+			margin: 0 auto 20px;
+		}
+
+	}
 
 }
 
@@ -131,23 +161,19 @@
 		font-size: 2.5em; 
 		line-height: 60px;
 		display: block;
-		width: 60px;
-		height: 60px;
+		width: 50px;
+		height: 50px;
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: 10px;
+		right: 10px;
 		z-index: 13;
 		cursor: pointer;
 
-		&:before {
-			font-family: FontAwesome;
-			content: "\f0c9";
-		}
+		background-image: url('../images/menu-hamburger.png');
+		@include OptimiseBgImg(contain);
 
 		&.open {
-			&:before {
-				content: "\f00d";
-			}
+			background-image: url('../images/close.png');
 		}
 	}
 	
@@ -158,7 +184,7 @@
 		box-sizing: border-box;
 		background-color: rgba(255,255,255,0.9);
 		width: 40%;
-		padding: 60px 2% 30px;
+		padding: 80px 2% 30px;
 		position: absolute;
 		top: -10px;
 		right: -110%;
@@ -172,38 +198,75 @@
 		&.active { right: 0; }
 		
 		nav.mainnav {
-			background: none;
 			height: auto;
-			padding: 0;
+			background: none !important;
 			
 			ul li {
 				width: 100%;
 				display: block;
 				margin-bottom: 5px;
-				text-align: left;
-				
+				-webkit-box-shadow: none;
+				-moz-box-shadow: none;
+				box-shadow: none;
+
+				&:hover {
+					background: none;
+					> ul.secondary {
+						display: none;
+					}
+				}
+
+				&.current > a,
+				&.section > a {
+					background: $burgundy;
+					color: $white;
+				}
+
 				a {
 					display: block;
 					width: 90%;
 					padding: 10px 5%;
-					position: relative;
+					/*position: relative;*/
+					text-align: left;
+					background: none;
 					
 					&:hover {
 						color: $white;
 						background: $burgundy;
-						text-decoration: none;
-						border-color: $white;
+					}
+				}	
+
+				&.dropdown {
+					span:before {
+						content: "\f105";
+						font-family: FontAwesome;
+						float: right;
 					}
 
-				}
-				
-				&.current > a,
-				&.section > a {
-					text-decoration: none;
-					border-color: $white;
+					.open span:before {
+						content: "\f107";
+					}
 				}
 			}
-			
+
+			ul.secondary {
+				display: none;
+				position: static;
+				
+				li {					
+					a {	
+						background: none;
+						width: 90%;
+						padding: 10px 0 10px 10%;
+						
+						&:hover, &:focus {
+							text-decoration: none;
+							background: $nude60;
+							color: $burgundy;
+						}
+					}
+				}		
+			}
 		}
 	} /* end nav panel */
 
@@ -222,11 +285,20 @@
 
 @media (max-width: 600px) {
 
+	h1 { font-size: 3em; line-height: 1em; }
+	h2 { font-size: 2.2em; line-height: 1em; }
+	h3 { font-size: 2em; line-height: 1em; }
+	h4 { font-size: 1.8em; line-height: 1em; }
+	h5 { font-size: 1.4em; line-height: 1em; }
+	.typography p { font-size: 1em; }
+
 	.wrapper {
 		background: none !important;
 	}
 
 	.liner { padding: 0; }
+
+	main { padding: 20px 0; }
 
 	.nav-panel { width: 60%; }
 
@@ -246,6 +318,13 @@
 		&.landscape { width: 100%; height: 250px; }
 	}
 
+	footer { position: static; }
+
+	/* Home page */
+	.HomePage footer {
+		position: absolute;
+	}
+
 	footer .w1x3.copy {
 		p { text-align: left; 
 			span { margin: 0; display: block; }
@@ -256,6 +335,7 @@
 
 @media (max-width: 480px) {
 
+	header h1 a { width: 200px; height: 62px; }
 	.nav-panel { width: 100%; }
 
 	/* General page */
@@ -267,9 +347,57 @@
 
 @media (max-width: 350px) {
 
+	header h1 a { margin: 0 0 0 10px; }
+
+	.nav-panel { right: -120%; }
+
 	/* Gallery page */
 	.GalleryPage .grid .item { 
 		&.portrait { height: 500px; }
 		&.landscape { height: 300px; }
 	}
 }
+
+/*	 RESPONDING TO HEIGHT */
+
+@media (max-height: 1200px) {
+	.HomePage .wrapper { 
+		min-height: 100%;
+	}
+	.wrapper {
+		overflow-x: hidden;
+		overflow-y: inherit;
+		/*margin-bottom: 75px;*/
+	}
+	footer {
+		height: 60px;
+		bottom: -75px;
+		padding-bottom: 0;
+	}
+}
+
+/*
+@media (max-height: 1030px) {
+	.HomePage .wrapper { 
+		min-height: 100%;
+		padding-bottom: 20%; 
+	}
+}
+
+@media (max-height: 780px) {
+	.HomePage .wrapper { padding-bottom: 20%; }
+}
+
+@media (max-height: 650px) {
+	header h1 a { width: 200px; height: 62px; }
+	.HomePage .wrapper { padding-bottom: 48%; }
+}
+
+@media (max-height: 350px) {
+	.HomePage .wrapper { padding-bottom: 25%; }
+}
+
+*/
+
+
+

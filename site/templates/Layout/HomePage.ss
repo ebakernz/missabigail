@@ -1,5 +1,5 @@
 <% if Slides %>
-	<div class="slides">
+	<div class="slides general">
 		<% loop Slides %>
 
 			<div class="slide responsive-bg" style="background-image: url('$SlideImg.setWidth(1000).URL')"
@@ -19,11 +19,3 @@
 		<% end_if %>
 	</div>
 <% end_if %>
-
-<main class="typography fixtotop">
-	  
-	<div class="inner">
-	</div>  
-
-
-</main>

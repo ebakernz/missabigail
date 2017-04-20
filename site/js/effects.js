@@ -39,13 +39,98 @@ function ResponsiveBG(){
 
 }
 
-function Slides() {
+
+function GeneralSlides() {
 
 	// Click on slide nav overrides timer
-	$('.slides .slidenav a').click( function(evt) {
+	$('.general.slides .slidenav a').click( function(evt) {
 		evt.preventDefault();
-		changeSlides( 'click', $(this).attr('href') );
+		GeneralSlides( 'click', $(this).attr('href') );
 		clearInterval( setSliderTimer );		
+	});
+	
+	function GeneralSlides( mode, destination ){
+
+		if( mode == 'first') {
+			$('.general.slides .slide:eq(0)').css({ 'z-index' : 3 });
+			return false;
+		}
+		
+		// if no destination specified
+		if( mode == 'click' ){			
+			if( destination == 'prev' ) {				
+				if( current == 0 ){
+					next = numSlides;
+				} else {
+					next = current - 1;
+				}				
+			} else {
+				// if at last element
+				if( current == numSlides ){
+					next = 0;
+				} else {
+					next = current + 1;
+				}
+			}			
+		} else {
+			// if at last element
+			if( current == numSlides ){
+				next = 0;
+			} else {
+				next = current + 1;
+			}
+		}
+				
+		// --- UPDATE SLIDER		
+		// move all to bottom
+		$('.general.slides .slide').css({ 'z-index' : 1 });
+		
+		// move current on top of bottom stack
+		$('.general.slides .slide:eq(' + current + ')').css({ 'z-index' : 2 });
+		
+		// move next slide to top with 0% opacity and then animate in
+		$('.general.slides .slide:eq(' + next + ')').css({ 'z-index' : 3, 'opacity': 0 }).animate({ 'opacity' : 1 }, 800);
+		
+		// --- UPDATE COUNTER
+		current = next;	
+	
+		
+	}
+	
+	// number of slides
+	var numSlides = $('.general.slides .slide').length - 1;
+
+	// Check if there is more than 1 slide, so don't flash single image
+	if( numSlides ) {
+	
+		// current slider
+		var current = 0;
+		
+		// declare variable
+		var next = 1;
+		
+		// run function on load
+		GeneralSlides( 'first' );
+
+		// initiate timed slides, default timing every 7 secs
+		var transition = 7000;
+
+		// If sidebar page slider, transition every 4 secs
+		if( $('.sidebar .slides').length > 0 ) {
+			var transition = 4000;
+		} 
+
+		var setSliderTimer = setInterval( GeneralSlides, transition );
+	
+	}
+}
+
+function GallerySlides() {
+
+	// Click on slide nav overrides timer
+	$('.GalleryPage .slides .slidenav a').click( function(evt) {
+		evt.preventDefault();
+		changeGallerySlides( 'click', $(this).attr('href') );
 	});
 
 	if( $(window).width() > 500 ) {
@@ -54,22 +139,21 @@ function Slides() {
 	        evt.preventDefault();
 	        var href = $(this).attr('data-eq');
 	        var num = href - 1;
-	        changeSlides( 'select', num );
-	        clearInterval( setSliderTimer );
+	        changeGallerySlides( 'select', num );
 	    });
 	}
 	
-	function changeSlides( mode, destination ){
+	function changeGallerySlides( mode, destination ){
 
 		if( mode == 'first') {
-			$('.slides .slide:eq(0)').css({ 'z-index' : 3, 'opacity': 1 });
+			$('.GalleryPage .slides .slide:eq(0)').css({ 'z-index' : 3, 'opacity': 1 });
 			return false;
 		}
 
 		if( mode == 'select' ) {
 			next = destination;
-			$('.slides .slide').css({ 'z-index' : 1 });
-			$('.slides .slide:eq(' + next + ')').css({ 'z-index' : 3 });
+			$('.GalleryPage .slides .slide').css({ 'z-index' : 1, 'opacity': 0 });
+			$('.GalleryPage .slides .slide:eq(' + next + ')').css({ 'z-index' : 3, 'opacity': 1 });
 			current = next;
 			return false;
 		}
@@ -101,13 +185,13 @@ function Slides() {
 				
 		// --- UPDATE SLIDER		
 		// move all to bottom
-		$('.slides .slide').css({ 'z-index' : 1 });
+		$('.GalleryPage .slides .slide').css({ 'z-index' : 1,  'opacity': 0 });
 		
 		// move current on top of bottom stack
-		$('.slides .slide:eq(' + current + ')').css({ 'z-index' : 2 });
+		$('.GalleryPage .slides .slide:eq(' + current + ')').css({ 'z-index' : 2,  'opacity': 0 });
 		
 		// move next slide to top with 0% opacity and then animate in
-		$('.slides .slide:eq(' + next + ')').css({ 'z-index' : 3 }).animate({ 'opacity' : 1 }, 500);
+		$('.GalleryPage .slides .slide:eq(' + next + ')').css({ 'z-index' : 3, 'opacity' : 0 }).animate({ 'opacity' : 1 }, 500);
 		
 		// --- UPDATE COUNTER
 		current = next;	
@@ -116,7 +200,7 @@ function Slides() {
 	}
 	
 	// number of slides
-	var numSlides = $('.slides .slide').length - 1;
+	var numSlides = $('.GalleryPage .slides .slide').length - 1;
 
 	// Check if there is more than 1 slide, so don't flash single image
 	if( numSlides ) {
@@ -128,19 +212,7 @@ function Slides() {
 		var next = 1;
 		
 		// run function on load
-		changeSlides( 'first' );
-
-		// initiate timed slide, accept for gallery page (hidden, only change on click)
-		if( $('.GalleryPage').length == 0 ) {
-			// default timing every 7 secs
-			var transition = 7000;
-			// If general page slider, transition every 4 secs
-			if( $('.sidebar .slides').length > 0 ) {
-				var transition = 4000;
-			} 
-
-			var setSliderTimer = setInterval( changeSlides, transition );
-		}
+		changeGallerySlides( 'first' );
 	}
 }
 
@@ -173,6 +245,20 @@ function MobileNavExpansion() {
 		
 	});
 	
+	// If using mobile nav, smaller than ipad portrait
+	if( $(window).width() < 700 ) {
+
+		console.log('testing');
+
+		var dropdowns = $('.mainnav li.dropdown > a');
+		$(dropdowns).click(function(evt) {
+			evt.preventDefault();
+			$(this).toggleClass('open');
+			$(this).next('.secondary').toggle();
+		});
+
+	}
+
 }
 
 
@@ -181,11 +267,11 @@ function TestimonialSlider() {
 	// Click on slide nav overrides timer
 	$('.testimonials .slidenav a').click( function(evt) {
 		evt.preventDefault();
-		changeSlides( 'click', $(this).attr('href') );
+		changeTestimonials( 'click', $(this).attr('href') );
 		clearInterval( setSliderTimer );		
 	});
 	
-	function changeSlides( mode, destination ){
+	function changeTestimonials( mode, destination ){
 
 		if( mode == 'first') {
 			$('.testimonials .quote:eq(0)').css({ 'z-index' : 3, 'opacity': 1 });
@@ -246,10 +332,10 @@ function TestimonialSlider() {
 		var next = 1;
 		
 		// run function on load
-		changeSlides( 'first' );
+		changeTestimonials( 'first' );
 
 		// initiate timed slide
-		var setSliderTimer = setInterval( changeSlides, 10000 );
+		var setSliderTimer = setInterval( changeTestimonials, 10000 );
 	}
 }
 
@@ -258,19 +344,28 @@ function TestimonialSlider() {
 $(document).ready( function() {
 	// Change out images based on screen size
 	ResponsiveBG();
+
 	if( $(window).width() > 500 ) {
 		// only do popup gallery if bigger than 500px
 		Popups();
 	}
 
-	// Only initiate slider if more than 1 slide
-	if( $('.slides .slide').length > 0 ) Slides();
+	// Homepage and sidebar slides
+	if( $('.HomePage .slides .slide, .sidebar .slides .slide').length > 0 ) GeneralSlides();
+
+	// Gallery slides, in popup
+	if( $('.GalleryPage .slides .slide').length > 0 ) GallerySlides();
 
 	// Hide/show nav for smaller devices
 	MobileNavExpansion();
 
 	// Long page
-	if( $('.wrapper').height() > $(window).height() ) $('.wrapper').addClass('long');
+	console.log('window ' + $(window).height());
+	console.log('main ' + $('main').height());
+	
+	if( $('main').height() > $(window).height() ) {
+		$('.wrapper').addClass('long');
+	}
 
 	// Testimonial slider
 	if( $('.quote').length > 1 ) TestimonialSlider();

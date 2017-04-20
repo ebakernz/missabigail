@@ -3,20 +3,23 @@
 */
 
 .testimonials {
-	margin-top: 30px;
+	margin: 30px auto 0;
 	position: relative;
 	min-height: 240px;
+	width: 90%;
 	/*border-bottom: 1px solid $grey;*/
 
+	h3 {
+		padding-bottom: 20px;
+	}
+
 	.quote {
-		width: 84%;
-		height: 100%;
+		width: 100%;
 		position: absolute;
-		padding: 0 8%;
 		opacity: 0;
 
 		p {
-			font-size: 1.3em;
+			font-size: 1.2em;
 			font-style: italic;
 			line-height: 1.4em;
 			padding: 0;
@@ -25,6 +28,7 @@
 				font-size: 1.2em;
 				font-style: normal;
 				text-align: right;
+				margin-top: 5px;
 			}
 		}
 	}
@@ -40,8 +44,8 @@
 			width: 25px;
 			text-align: center;
 
-			&.left { left: 0; }
-			&.right { right: 0; }
+			&.left { left: -30px; }
+			&.right { right: -30px; }
 
 			&:hover {
 				i { color: $burgundy; }

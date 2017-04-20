@@ -9,9 +9,9 @@
 					<div class="slide">
 						<img class="item $ImageOrientation"
 							<% if ImageOrientation == 'portrait' %>
-								src="$Image.setheight(1200).URL"
+								src="$Image.setheight(1700).URL"
 							<% else %>
-								src="$Image.setWidth(1200).URL"
+								src="$Image.setWidth(1700).URL"
 							<% end_if %>
 						/>
 					</div>

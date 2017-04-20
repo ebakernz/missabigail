@@ -10,11 +10,13 @@
 
         <div class="float-right w1x2">
 
-            <a href="$SiteConfig.Instagram" target="_blank" class="social instagram" title="Go to Miss Abigail Bridal Couture Instagram"><i class="fa fa-instagram"></i></a>
-            <a href="$SiteConfig.Facebook" target="_blank" class="social facebook" title="Go to Miss Abigail Bridal Couture Facebook"><i class="fa fa-facebook"></i></a>
-            <a href="mailto:enquiries@missabigail.co.nz" target="_blank" title="Email Miss Abigil Bridal Couture"><i class="fa fa-envelope"></i></a>
-
-            <p class="float-right copy">Copyright &copy; Miss Abigail, {$Now.Year}. <span>Site by Emma Baker.</span></p>
+            <div class="social-links cf">
+                <a href="$SiteConfig.Instagram" target="_blank" class="social instagram" title="Go to Miss Abigail Bridal Couture Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="$SiteConfig.Facebook" target="_blank" class="social facebook" title="Go to Miss Abigail Bridal Couture Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="mailto:enquiries@missabigail.co.nz" target="_blank" title="Email Miss Abigil Bridal Couture"><i class="fa fa-envelope"></i></a>
+            </div>
+            
+            <p class="float-right copy">Copyright &copy; Miss Abigail, {$Now.Year}. &nbsp;Site by Emma Baker.</p>
             
         </div>
 

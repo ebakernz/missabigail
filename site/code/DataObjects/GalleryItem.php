@@ -25,7 +25,7 @@ class GalleryItem extends DataObject {
 		$img = new UploadField('Image', 'Image');
 		$img->setFolderName('Gallery');
 
-		$cat = new DropDownField('CategoryID', 'Category', Category::get()->map('ID', 'Title'));
+		$cat = new DropDownField('CategoryID', 'Category', Category::get()->filter(array('GalleryPageID' => $this->GalleryPageID))->map('ID', 'Title'));
 		$cat->setEmptyString('(Select one)');
 
 		return new FieldList(

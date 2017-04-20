@@ -6,7 +6,7 @@
 
 			<% if Slides %>
 
-				<div class="float-left w1x2-right-spaced">
+				<div class="float-left w1x2">
 					$Content					
 				</div>
 
@@ -18,7 +18,7 @@
 						<% end_loop %>
 					<% else %>
 
-						<div class="slides">
+						<div class="slides general">
 
 							<% loop Slides %>
 								<div class="slide" style="background-image: url('$SlideImg.croppedImage(600,700).URL')" alt="$Title"></div>

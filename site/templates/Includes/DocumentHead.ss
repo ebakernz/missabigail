@@ -19,11 +19,12 @@
 		<meta property="og:image" content="/site/images/logo.png" />
 	<% end_if %>
 	
-	<link rel="shortcut icon" type="image/ico" href="/site/favicon.ico" />
-	<link rel="shortcut icon" type="image/x-icon" href="/site/favicon.ico" />
-	<link rel="shortcut-icon" href="/site/favicon.ico" />
+	<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="shortcut-icon" href="favicon.ico" />
 	
 	<% include GoogleAnalytics %>
 	
 </head>
+
 <body class="$ClassName">

@@ -80,9 +80,11 @@ class Page_Controller extends ContentController {
 		if($this->Testimonials()->Count() > 1) return true;
 	}
 
+	/*
 	function ActiveGalleryNav($ID) {
+		Debug::show($ID);
 		if($this->ID == $ID) return true;
-	}
+	}*/
 
 	/* Gallery filter links into mainnav */
 	function GalleryCategoryToMenu($ID) {

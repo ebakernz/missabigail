@@ -21,10 +21,13 @@ footer {
 		}
 
 		a {
-			font-size: 1.1em;
 			color: $burgundy;
 			text-decoration: none;
 			padding: 0 15px 0 0;
+
+			&:hover {
+				color: $black;
+			}
 		}
 
 	}
@@ -45,13 +48,9 @@ footer {
 	}
 
 	.copy {
+		font-size: 0.9em;
 		color: $burgundy;
 		text-align: center;
 	    margin: 0 15px 0 0;
-
-		span {
-			display: inline-block;
-			margin-left: 20px;
-		}
 	}
 }

@@ -4,10 +4,9 @@
 
 footer {	
 	position: absolute;
-	right: 0;
 	bottom: 0;
-	left: 0;
 	z-index: 4;
+	width: 100%;
 	/*border-top: 1px solid rgba(255, 225, 187, 1	);*/
 	box-shadow: 1px 0px 5px rgba(0,0,0,0.2);
 	background: url('../images/dot-bg.jpg');
@@ -47,10 +46,13 @@ footer {
 		}
 	}
 
+	.social-links { float: right; }
+
 	.copy {
 		font-size: 0.9em;
 		color: $burgundy;
 		text-align: center;
 	    margin: 0 15px 0 0;
+	    line-height: 23px;
 	}
 }

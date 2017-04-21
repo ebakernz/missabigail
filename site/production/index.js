@@ -353,8 +353,6 @@ function MobileNavExpansion() {
 	// If using mobile nav, smaller than ipad portrait
 	if( $(window).width() < 700 ) {
 
-		console.log('testing');
-
 		var dropdowns = $('.mainnav li.dropdown > a');
 		$(dropdowns).click(function(evt) {
 			evt.preventDefault();
@@ -447,8 +445,17 @@ function TestimonialSlider() {
 
 
 $(document).ready( function() {
+
 	// Change out images based on screen size
-	ResponsiveBG();
+	// test for window width - less than 600 don't show
+	if( $(window).width() > 600) {
+		ResponsiveBG();
+	}
+
+	// test for home page - always show slides
+	if( $('.HomePage').length > 0 ) {
+		ResponsiveBG();
+	}
 
 	if( $(window).width() > 500 ) {
 		// only do popup gallery if bigger than 500px
@@ -463,14 +470,6 @@ $(document).ready( function() {
 
 	// Hide/show nav for smaller devices
 	MobileNavExpansion();
-
-	// Long page
-	console.log('window ' + $(window).height());
-	console.log('main ' + $('main').height());
-	
-	if( $('main').height() > $(window).height() ) {
-		$('.wrapper').addClass('long');
-	}
 
 	// Testimonial slider
 	if( $('.quote').length > 1 ) TestimonialSlider();

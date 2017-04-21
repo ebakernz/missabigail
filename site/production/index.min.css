@@ -2110,7 +2110,9 @@ button {
   padding: 10px 3%;
   width: 94%;
   border: 1px solid #BBBBBB;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0; }
 
 #UserForm_Form .field {
   padding-bottom: 15px; }
@@ -2138,7 +2140,9 @@ input[type="submit"] {
   text-decoration: none;
   font-size: 15px;
   border: 0;
-  width: 180px; }
+  width: 180px;
+  -webkit-appearance: none;
+  border-radius: 0; }
 
 input[type="submit"]:hover {
   background: #6b1a25; }

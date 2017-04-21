@@ -4,12 +4,6 @@
 
 @media (max-width: 1700px) {
 
-	/* Gallery page */
-/*	.GalleryPage #popups .popup-content.slides .slide .item {
-		&.portrait { width: 60%; }
-		&.landscape { height: 80%; }
-	}*/
-
 }
 
 @media (max-width: 1400px) {
@@ -44,9 +38,6 @@
 
 @media (max-width: 1300px) {
 
-	/* Home page */
-	/*.HomePage .wrapper { padding-bottom: 5%; }*/
-
 	/* Gallery page */
 	.GalleryPage .grid .item {
 		height: 350px;
@@ -70,18 +61,6 @@
 
 	.mainnav ul { width: 100%; }
 
-	/*.wrapper {
-		margin-bottom: 75px;
-		overflow-x: hidden;
-		overflow-y: auto;
-	}
-	footer {
-		height: 60px;
-		bottom: -75px;
-		padding-bottom: 0;;
-	}*/
-
-
 	/* Gallery page */
 	.GalleryPage .grid .item { height: 300px; }
 
@@ -95,6 +74,15 @@
 		width: 90%;
 	}
 
+	/* Testimonials */
+	.testimonials {
+		h3 { font-size: 2.2em; }
+		.quote {
+			p { font-size: 1.1em; }
+			p.author { font-size: 1em; }
+		}
+	}
+
 } 
 
 @media (max-width: 780px) {
@@ -102,7 +90,7 @@
 	.liner { padding: 20px; }
 
 	main {
-		padding: 20px 0;
+		padding: 20px 0 100px;
 	}
 
 	/* General page */
@@ -116,6 +104,9 @@
 		margin: 0 0 40px;
 	}
 
+	/* Home page footer */
+	/*.HomePage .wrapper { min-height: 114%; }*/
+
 	/* Gallery page */
 	.GalleryPage .grid .item { 
 		height: 450px;	
@@ -124,31 +115,19 @@
 		&.landscape { width: 99%; }
 	}
 
+	/* Testimonials */
+	.testimonials .slidenav a {
+		top: 30%;
+	}
+
 	/* Footer */
 	footer {
-		height: 110px;
-		bottom: -125px;
 
-		.w1x2 { margin: 0 0 15px; }
-
-		ul {
-			text-align: center;
-
-			a {
-				padding: 0 2%;
-			}
-		}	
+		.w1x2 { margin: 0; }
 
 		.copy {
-			clear: right;
-			text-align: center;
 			float: none;
-			margin: 0;
-		}
-
-		.social-links {
-			width: 90px;
-			margin: 0 auto 20px;
+			text-align: left;
 		}
 
 	}
@@ -270,6 +249,9 @@
 		}
 	} /* end nav panel */
 
+	/* Home page footer */
+	/*.HomePage .wrapper { min-height: 119%; }*/
+
 	/* Gallery page */
 	.GalleryPage .grid .item { 
 		height: 400px;
@@ -292,13 +274,13 @@
 	h5 { font-size: 1.4em; line-height: 1em; }
 	.typography p { font-size: 1em; }
 
-	.wrapper {
+	html.responsive-bg {
 		background: none !important;
 	}
 
+	body { background: $nude40; }
+	main .inner { background: none; }
 	.liner { padding: 0; }
-
-	main { padding: 20px 0; }
 
 	.nav-panel { width: 60%; }
 
@@ -318,16 +300,21 @@
 		&.landscape { width: 100%; height: 250px; }
 	}
 
-	footer { position: static; }
 
-	/* Home page */
 	.HomePage footer {
-		position: absolute;
+		height: 60px;
+    	bottom: -90px;
 	}
 
-	footer .w1x3.copy {
-		p { text-align: left; 
-			span { margin: 0; display: block; }
+	footer {
+		.float-left {
+			margin-bottom: 10px;
+		}
+
+		.w1x3.copy {
+			p { text-align: left; 
+				span { margin: 0; display: block; }
+			}
 		}
 	}
 
@@ -343,9 +330,41 @@
 		height: 450px;
 	}
 
+	main {
+		padding: 20px 0 160px;
+	}
+
+	/* Testimonials */
+	.testimonials {
+		min-height: 400px;
+	}
+
+	.HomePage footer {
+		height: 100px;
+		bottom: -130px;
+	}
+
+	footer {
+
+		ul {
+			text-align: center;
+		}
+		.social-links {
+			float: none;
+			width: 90px;
+			margin: 10px auto;
+		}
+		.copy {
+			clear: right;
+			text-align: center;
+		}
+	}
+
 }
 
 @media (max-width: 350px) {
+
+	main { padding: 20px 0 180px; }
 
 	header h1 a { margin: 0 0 0 10px; }
 
@@ -358,46 +377,17 @@
 	}
 }
 
-/*	 RESPONDING TO HEIGHT */
 
-@media (max-height: 1200px) {
-	.HomePage .wrapper { 
-		min-height: 100%;
-	}
-	.wrapper {
-		overflow-x: hidden;
-		overflow-y: inherit;
-		/*margin-bottom: 75px;*/
-	}
-	footer {
-		height: 60px;
-		bottom: -75px;
-		padding-bottom: 0;
-	}
-}
-
+/* 	RESPONDING TO HEIGHT */
 /*
-@media (max-height: 1030px) {
-	.HomePage .wrapper { 
-		min-height: 100%;
-		padding-bottom: 20%; 
-	}
+@media (max-height: 700px) {
+	.HomePage .wrapper { min-height: 122%; }
 }
 
-@media (max-height: 780px) {
-	.HomePage .wrapper { padding-bottom: 20%; }
+@media (max-height: 550px) {
+	.HomePage .wrapper { min-height: 129%; }
 }
 
-@media (max-height: 650px) {
-	header h1 a { width: 200px; height: 62px; }
-	.HomePage .wrapper { padding-bottom: 48%; }
-}
-
-@media (max-height: 350px) {
-	.HomePage .wrapper { padding-bottom: 25%; }
-}
-
-*/
-
-
-
+@media (max-height: 450px) {
+	.HomePage .wrapper { min-height: 134%; }
+}*/

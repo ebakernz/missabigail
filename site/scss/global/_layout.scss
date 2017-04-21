@@ -7,24 +7,25 @@ html,
 body {
 	margin:0;
 	padding:0;
-	height:100%;
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	@include OptimiseBgImg();
+	background-attachment: fixed;
 }
 
 .wrapper {
-	min-height: 100%;
 	position: relative;
-	@include OptimiseBgImg();
-	overflow: hidden;
-
-	&.long {
-		background-size: contain;
-		background-repeat: repeat-y;
-		background-position: top center;
-	}
+	width: 100%;
+	min-height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 main {
-	padding: 40px 0 150px;
+	padding: 40px 0 100px;
 
 	&.fixtotop { padding-top: 0; }
 

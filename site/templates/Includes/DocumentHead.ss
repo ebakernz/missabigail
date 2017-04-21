@@ -1,5 +1,11 @@
 <!doctype html>
-<html lang="en" class="<% if URLSegment == 'Security' %>security-page<% end_if %>">
+<html lang="en" class="responsive-bg<% if URLSegment == 'Security' %>security-page<% end_if %>" 
+	<% if BackgroundImage %>
+		data-large="$BackgroundImage.setWidth(2000).URL"
+		data-medium="$BackgroundImage.setWidth(1200).URL"
+		data-small="$BackgroundImage.setWidth(700).URL"
+	<% end_if %>
+>
 <head>
 
 	<% base_tag %>

@@ -3,11 +3,9 @@
 */
 
 .testimonials {
-	margin: 30px auto 0;
+	margin: 30px 40px 0;
 	position: relative;
-	min-height: 240px;
-	width: 90%;
-	/*border-bottom: 1px solid $grey;*/
+	min-height: 300px;
 
 	h3 {
 		padding-bottom: 20px;
@@ -44,8 +42,8 @@
 			width: 25px;
 			text-align: center;
 
-			&.left { left: -30px; }
-			&.right { right: -30px; }
+			&.left { left: -35px; }
+			&.right { right: -35px; }
 
 			&:hover {
 				i { color: $burgundy; }

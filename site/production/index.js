@@ -350,6 +350,13 @@ function MobileNavExpansion() {
 		
 	});
 	
+	$mobile = isMobile();
+	if( $mobile ) {
+		$('.mainnav li.dropdown > a').click(function() {
+			$(this).next('.secondary').toggle();
+		});
+	}
+
 	// If using mobile nav, smaller than ipad portrait
 	if( $(window).width() < 700 ) {
 
@@ -362,6 +369,11 @@ function MobileNavExpansion() {
 
 	}
 
+}
+
+function isMobile() {
+  try{ document.createEvent("TouchEvent"); return true; }
+  catch(e){ return false; }
 }
 
 

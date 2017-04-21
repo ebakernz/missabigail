@@ -10,7 +10,8 @@
 @include font-face('ShelleyAllegroScript', '../fonts/ShelleyAllegroScript', $exts: eot woff2 woff ttf svg);
 
 $scriptfont: 'ShelleyAllegroScript';
-$bodyfont: 'Lora';
+$navfont: 'Lora';
+$bodyfont: 'Roboto Condensed';
 
 
 body,
@@ -44,6 +45,7 @@ html {
 
 h1, h2, h3 {
 	font-family: $scriptfont;
+	color: $burgundy;
 }
 
 h1 {

@@ -2,7 +2,7 @@
 	<ul class="inner cf">
 		<% loop Menu(1) %>
           <li class="$LinkingMode<% if ClassName == 'GalleryPage' %> dropdown<% end_if %>">
-          	<a <% if ClassName != 'GalleryPage' %>href="$Link"<% end_if %>>
+          	<a href="$Link">
           		$MenuTitle.XML
           		<span></span>
           	</a>

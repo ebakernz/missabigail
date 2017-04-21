@@ -1983,7 +1983,7 @@ main {
 
 body,
 html {
-  font-family: "Lora", "Times New Roman", serif;
+  font-family: "Roboto Condensed", "Times New Roman", serif;
   font-size: 14px;
   color: #333333; }
 
@@ -2008,7 +2008,8 @@ html {
  * Headings
  **/
 h1, h2, h3 {
-  font-family: "ShelleyAllegroScript"; }
+  font-family: "ShelleyAllegroScript";
+  color: #942433; }
 
 h1 {
   font-size: 4rem;
@@ -2194,6 +2195,7 @@ input[type="submit"]:hover {
  * NAV PRIMARY
  **/
 .mainnav {
+  font-family: "Lora";
   background: #FFFFFF;
   background: rgba(255, 255, 255, 0.85);
   background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.85) 1%, rgba(255, 255, 255, 0.85) 20%, rgba(255, 255, 255, 0.65) 40%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0.25) 80%, rgba(255, 255, 255, 0) 100%);
@@ -2218,14 +2220,20 @@ input[type="submit"]:hover {
     width: 16.4%; }
     .mainnav li.section a {
       color: #942433; }
-    .mainnav li:hover {
+    .mainnav li.dropdown:hover {
       background: rgba(255, 255, 255, 0.8);
-      -webkit-box-shadow: inset 0px 3px 3px 0px rgba(163, 161, 163, 0.6);
-      -moz-box-shadow: inset 0px 3px 3px 0px rgba(163, 161, 163, 0.6);
-      box-shadow: inset 0px 3px 3px 0px rgba(163, 161, 163, 0.6); }
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d3d3d3+0,ffffff+19&1+0,0.8+20 */
+      background: -moz-linear-gradient(top, lightgray 0%, rgba(255, 255, 255, 0.81) 19%, rgba(255, 255, 255, 0.8) 20%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, lightgray 0%, rgba(255, 255, 255, 0.81) 19%, rgba(255, 255, 255, 0.8) 20%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, lightgray 0%, rgba(255, 255, 255, 0.81) 19%, rgba(255, 255, 255, 0.8) 20%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3d3d3', endColorstr='#ccffffff',GradientType=0 );
+      /* IE6-9 */ }
   .mainnav a {
     display: block;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #000000;
     text-transform: uppercase;
     text-decoration: none;
@@ -2237,7 +2245,7 @@ input[type="submit"]:hover {
   .mainnav ul.secondary {
     display: none;
     position: absolute;
-    top: 37px;
+    top: 35px;
     z-index: 99;
     width: 100%; }
     .mainnav ul.secondary li {
@@ -2350,6 +2358,7 @@ header {
 	Page footer 
 */
 footer {
+  font-family: "Lora";
   position: absolute;
   bottom: 0;
   z-index: 4;

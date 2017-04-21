@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	
+	
+		
+			<url>
+				<loc>http://localhost/missabigail/www/</loc>
+				<lastmod>2017-04-07T04:49:06+00:00</lastmod>
+			</url>
+			
+		
+	
+		
+			<url>
+				<loc>http://localhost/missabigail/www/about/</loc>
+				<lastmod>2017-04-21T04:40:51+00:00</lastmod>
+			</url>
+			
+		
+	
+		
+			<url>
+				<loc>http://localhost/missabigail/www/gallery/</loc>
+				<lastmod>2017-04-17T00:47:41+00:00</lastmod>
+			</url>
+			
+		
+	
+		
+			<url>
+				<loc>http://localhost/missabigail/www/styling/</loc>
+				<lastmod>2017-04-07T06:10:44+00:00</lastmod>
+			</url>
+			
+		
+	
+		
+			<url>
+				<loc>http://localhost/missabigail/www/media/</loc>
+				<lastmod>2017-04-17T00:47:57+00:00</lastmod>
+			</url>
+			
+		
+	
+		
+			<url>
+				<loc>http://localhost/missabigail/www/contact/</loc>
+				<lastmod>2017-04-07T07:05:40+00:00</lastmod>
+			</url>
+			
+		
+	
+	
+	
+	</urlset>
+

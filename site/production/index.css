@@ -2115,18 +2115,18 @@ button {
   -webkit-appearance: none;
   border-radius: 0; }
 
-#UserForm_Form .field {
+.userform .field {
   padding-bottom: 15px; }
-  #UserForm_Form .field label {
+  .userform .field label {
     font-size: 1.3em;
     font-weight: normal;
     margin-bottom: 10px; }
-  #UserForm_Form .field.text input:focus, #UserForm_Form .field.text input:active {
+  .userform .field.text input:focus, .userform .field.text input:active {
     border-color: #BBBBBB; }
-  #UserForm_Form .field .error {
+  .userform .field .error {
     color: #942433; }
-  #UserForm_Form .field input.error,
-  #UserForm_Form .field textarea.error {
+  .userform .field input.error,
+  .userform .field textarea.error {
     border: 1px solid #942433; }
 
 input[type="submit"] {

@@ -352,7 +352,7 @@ function MobileNavExpansion() {
 	if( $(window).width() < 700 ) {
 		/*console.log('mob nav');*/
 
-		$('.mainnav li.dropdown a').click(function(evt) {
+		$('.mainnav li.dropdown > a').click(function(evt) {
 			evt.preventDefault();
 			/*console.log('clicked');
 			console.log($(this));*/

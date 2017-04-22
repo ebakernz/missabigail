@@ -2008,8 +2008,7 @@ html {
  * Headings
  **/
 h1, h2, h3 {
-  font-family: "ShelleyAllegroScript";
-  color: #942433; }
+  font-family: "ShelleyAllegroScript"; }
 
 h1 {
   font-size: 4rem;
@@ -2402,11 +2401,11 @@ footer {
 	Testimonials
 */
 .testimonials {
-  margin: 30px 40px 0;
-  position: relative;
-  min-height: 300px; }
+  margin: 30px 40px 0; }
   .testimonials h3 {
     padding-bottom: 20px; }
+  .testimonials .quotes {
+    position: relative; }
   .testimonials .quote {
     width: 100%;
     position: absolute;
@@ -2425,7 +2424,7 @@ footer {
     width: 100%; }
     .testimonials .slidenav a {
       position: absolute;
-      top: 40%;
+      top: 20%;
       z-index: 5;
       height: 40px;
       width: 25px;
@@ -2718,9 +2717,6 @@ footer {
       width: 49%; }
     .GalleryPage .grid .item.landscape {
       width: 99%; }
-  /* Testimonials */
-  .testimonials .slidenav a {
-    top: 30%; }
   /* Footer */
   footer .w1x2 {
     margin: 0; }
@@ -2733,8 +2729,8 @@ footer {
     font-size: 2.5em;
     line-height: 60px;
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -2748,7 +2744,7 @@ footer {
     -o-background-size: contain;
     background-size: contain; }
     #mob-icon.open {
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUU3RUMyQkYyNDdGMTFFN0I1M0FENkZBQjM1MzA4MkUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUU3RUMyQzAyNDdGMTFFN0I1M0FENkZBQjM1MzA4MkUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBRTdFQzJCRDI0N0YxMUU3QjUzQUQ2RkFCMzUzMDgyRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBRTdFQzJCRTI0N0YxMUU3QjUzQUQ2RkFCMzUzMDgyRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgR07cUAAAM7SURBVHja7JvfaxNBEMcvh3+Bf4P9A4pFJEmbu2BVfPTFYqnQ+qL49xQUtD5YfyL4JNYIuQbS6IMFH3wR/wL/ByXOwgrhyO3M7O5MLvYGlmvuLsd+Mvud3ZnbtqbTaXKWLE3OmDXADXADvNx2jnrj/sraFhyKBz+//iqdXzTDeWib0K/X0TwMUNtweAntQw2d9h7aK+jjXhRgeNBtOBzaj6vw+bhGsB+hXbZ/P4G+7QYBW88+L53uwfmiJrBXS+cOMOgU0exhxeVswdDzYGeh7/h4+Bu0L47rBnq4ANgjB6yxU9vmWgtbS1tPZo5bjKbzGnjW2GeI1u2goAUPyC1UpaeR67FsEApLnpYI0D0zRwvDbjqujymwrJWWhS4QTxdCmnXBnkDf1kWWlvDgPmF4F5E1e81xfQJ96oqupa2nRwqaRjULraOSPAB0hkCHahrT7Am0ts+DvbMlC41peiihWWhd334HpYcETedM6CNMsyGwsfJhTNM5UdMDBNZLs1IFACxQ9ZDrYpqVrHhg83RVIBPVrHSJp88MZJhmo8KySjwe0JljJJjqyW/pAKUFPBvINiqubyHfn8QIUBpDmhOoXMO4I9Up6TJtzoQWGcaawP+gXxDueyvpWU1gY38i3bMUwGbq2SHcd0u4iKACjM2zWkUEFeABE1YFOhWEdS0X30F7o1BEUAHG1sZm6rlJ0GzPM59WBaasjTulZWjMfFoVeJD4JQK5JnQs4E+EYdxVKCKoAJtS6pUIiUCW+OXTesD7K2vYux5uIsDNp/WAARarG489EwEMOg/xdBoA69KsKbitBziin+DF/pEKsB3GGGyMghu2+Njw8XTKhMVeRk8iwVKjM/ulfMocxpxFRUxop6Y50C3KblqiZtuJrB3bqanKRvb1T5iHFTUbqmnS7qJKD8OXL8DhMfKrRq8bE2yYuPeUmDiyB97+wfXwRQR2zH0ZHcmwedqMtkvsIW33Lt6t+hU52wyEoKuG933o2zMvDcMXD8zwKGsWzneSxdu8hOMe9O1hUNCCBzyd8fR36m4ZJTOB7HTGs4+izMPW02Y73/WkfnYD2g7mWdY8/D9Z8y8ADXAD3AAvlf0VYAAyKhMtQ70m8QAAAABJRU5ErkJggg==); }
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0UxQzMyRDUyNDdGMTFFNzg1RTVGQTk0MDVFNDAzMTAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0UxQzMyRDYyNDdGMTFFNzg1RTVGQTk0MDVFNDAzMTAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDRTFDMzJEMzI0N0YxMUU3ODVFNUZBOTQwNUU0MDMxMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDRTFDMzJENDI0N0YxMUU3ODVFNUZBOTQwNUU0MDMxMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlwokvUAAAFsSURBVHjaYvz//z/DQAAmhgECg8fiqaomikDcRC0LQGYBsTJei4EKDIDUfiCuBbIXUMHSeSCzgPgAkG2Ez8dRQCwPZccDFc+nwNK5QCoRypUB4mh8FlcB8UIkfgI5lkMtTUISWgzE5chqGLFlJ6hlCUhCC7Jvn0kkIXiR1S4C6o0nKlVDLVlAqs/RghfsU2yW4s1OpFqOLXiBZsSRlY+JtRwavElowRtHUQFCyHJSgpdg4sIRlOgJrg2IQZqriQ1esizGYTkDodRLlbIaGuxtWKQ6SbGU3EoCWxD9I9UQUoMavXBgIKeQIcnHWFJvBxC3k1u8EuVjfIUDucUrE5HBi7NwILd4ZaJG2UuO5UzUKntJtZyJnOClhuUoiQuoiBlIzSLFp0SWcCDHpADN+YvLx22UWorL56DSDV9QrwTix5RYimY5rBn1FIiXo5Z/wKBGxlNUjJWBuBVdnFwMMguIVdHFGUe7MPQCAAEGAB/YIJDedoI+AAAAAElFTkSuQmCC); }
   .nav-panel {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -2888,14 +2884,13 @@ footer {
     height: 450px; }
   main {
     padding: 20px 0 160px; }
-  /* Testimonials */
-  .testimonials {
-    min-height: 400px; }
   .HomePage footer {
     height: 100px;
     bottom: -130px; }
   footer ul {
     text-align: center; }
+    footer ul a {
+      padding: 0 5px; }
   footer .social-links {
     float: none;
     width: 90px;

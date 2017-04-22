@@ -14,7 +14,7 @@
 
 					<% if SingleSlide %>
 						<% loop Slides %>
-							<div class="slide single" style="background-image: url('$SlideImg.croppedImage(600,700).URL')" alt="$Title"></div>
+							<img class="slide single" src="$SlideImg.croppedImage(600,700).URL" alt="$Title" />
 						<% end_loop %>
 					<% else %>
 

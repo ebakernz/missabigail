@@ -4,11 +4,13 @@
 
 .testimonials {
 	margin: 30px 40px 0;
-	position: relative;
-	min-height: 300px;
 
 	h3 {
 		padding-bottom: 20px;
+	}
+
+	.quotes {
+		position: relative;
 	}
 
 	.quote {
@@ -36,7 +38,7 @@
 
 		a {
 			position: absolute;
-			top: 40%;
+			top: 20%;
 			z-index: 5;
 			height: 40px;
 			width: 25px;

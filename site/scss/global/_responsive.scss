@@ -115,11 +115,6 @@
 		&.landscape { width: 99%; }
 	}
 
-	/* Testimonials */
-	.testimonials .slidenav a {
-		top: 30%;
-	}
-
 	/* Footer */
 	footer {
 
@@ -140,8 +135,8 @@
 		font-size: 2.5em; 
 		line-height: 60px;
 		display: block;
-		width: 50px;
-		height: 50px;
+		width: 40px;
+		height: 40px;
 		position: absolute;
 		top: 10px;
 		right: 10px;
@@ -152,7 +147,7 @@
 		@include OptimiseBgImg(contain);
 
 		&.open {
-			background-image: url('../images/close.png');
+			background-image: url('../images/close-small.png');
 		}
 	}
 	
@@ -334,11 +329,6 @@
 		padding: 20px 0 160px;
 	}
 
-	/* Testimonials */
-	.testimonials {
-		min-height: 400px;
-	}
-
 	.HomePage footer {
 		height: 100px;
 		bottom: -130px;
@@ -348,6 +338,8 @@
 
 		ul {
 			text-align: center;
+
+			a { padding: 0 5px; }
 		}
 		.social-links {
 			float: none;

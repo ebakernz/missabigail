@@ -126,22 +126,20 @@ function GeneralSlides() {
 }
 
 function GallerySlides() {
-
+	
 	// Click on slide nav overrides timer
 	$('.GalleryPage .slides .slidenav a').click( function(evt) {
 		evt.preventDefault();
 		changeGallerySlides( 'click', $(this).attr('href') );
 	});
 
-	if( $(window).width() > 500 ) {
-		// Click on gallery item to trigger
-		$('.gallery-items .popup-trigger').click(function(evt) {
-	        evt.preventDefault();
-	        var href = $(this).attr('data-eq');
-	        var num = href - 1;
-	        changeGallerySlides( 'select', num );
-	    });
-	}
+	// Click on gallery item to trigger
+	$('.gallery-items .popup-trigger').click(function(evt) {
+        evt.preventDefault();
+        var href = $(this).attr('data-eq');
+        var num = href - 1;
+        changeGallerySlides( 'select', num );
+    });
 	
 	function changeGallerySlides( mode, destination ){
 
@@ -274,6 +272,21 @@ function isMobile() {
 
 function TestimonialSlider() {
 
+	// Set height of testimonial div
+	var maxHeight = -1;
+
+	$('.quotes .quote').each(function() {
+		maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+	});
+
+	$('.quotes .quote').each(function() {
+		$(this).height(maxHeight);
+	});
+
+	$('.quotes').height(maxHeight + 10);
+
+
+
 	// Click on slide nav overrides timer
 	$('.testimonials .slidenav a').click( function(evt) {
 		evt.preventDefault();
@@ -380,6 +393,7 @@ $(document).ready( function() {
 
 	// Testimonial slider
 	if( $('.quote').length > 1 ) TestimonialSlider();
+
 });
 
 // when screen is changed, recheck

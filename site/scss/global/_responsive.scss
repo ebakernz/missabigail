@@ -163,7 +163,6 @@
 		top: -10px;
 		right: -110%;
 		z-index: 10;
-		min-width: 320px;
 		-webkit-transition: right 0.3s linear;
 		-moz-transition: right 0.3s linear;
 		-o-transition: right 0.3s linear;
@@ -284,7 +283,11 @@
 		height: 600px;
 	}
 	.sidebar .slide {
-		min-height: 100%
+		min-height: 100%;
+	}
+	.sidebar .slide.single {
+		min-height: auto;
+		height: auto;
 	}
 
 
@@ -366,6 +369,28 @@
 	.GalleryPage .grid .item { 
 		&.portrait { height: 500px; }
 		&.landscape { height: 300px; }
+	}
+
+	.HomePage footer {
+		height: 180px;
+		bottom: -210px;
+	}
+
+	footer {
+		ul a { 
+			padding: 0; 
+			width: 50%;
+			float: left;
+			margin: 0 0 10px;
+		}
+
+		.copy {
+			margin: 0;
+			padding: 0 10px;
+			span {
+				display: block;
+			}
+		}
 	}
 }
 

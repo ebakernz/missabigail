@@ -16,7 +16,7 @@
                 <a href="mailto:enquiries@missabigail.co.nz" target="_blank" title="Email Miss Abigil Bridal Couture"><i class="fa fa-envelope"></i></a>
             </div>
             
-            <p class="float-right copy">Copyright &copy; Miss Abigail, {$Now.Year}. &nbsp;Site by Emma Baker.</p>
+            <p class="float-right copy">Copyright &copy; Miss Abigail, {$Now.Year}. <span>&nbsp;Site by Emma Baker.</span></p>
             
         </div>
 

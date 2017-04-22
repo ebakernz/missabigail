@@ -231,7 +231,7 @@ function GeneralSlides() {
 }
 
 function GallerySlides() {
-	
+
 	// Click on slide nav overrides timer
 	$('.GalleryPage .slides .slidenav a').click( function(evt) {
 		evt.preventDefault();
@@ -351,18 +351,17 @@ function MobileNavExpansion() {
 	$mobile = isMobile();
 	if( $mobile ) {
 		$('.mainnav li.dropdown > a').click(function() {
-			$(this).next('.secondary').toggle();
+			$(this).find('.secondary').toggle();
 		});
 	}
 
 	// If using mobile nav, smaller than ipad portrait
 	if( $(window).width() < 700 ) {
 
-		var dropdowns = $('.mainnav li.dropdown > a');
-		$(dropdowns).click(function(evt) {
+		$('.mainnav li.dropdown > a').click(function(evt) {
 			evt.preventDefault();
 			$(this).toggleClass('open');
-			$(this).next('.secondary').toggle();
+			$(this).find('.secondary').toggle();
 		});
 
 	}

@@ -2758,7 +2758,6 @@ footer {
     top: -10px;
     right: -110%;
     z-index: 10;
-    min-width: 320px;
     -webkit-transition: right 0.3s linear;
     -moz-transition: right 0.3s linear;
     -o-transition: right 0.3s linear;
@@ -2854,6 +2853,9 @@ footer {
     height: 600px; }
   .sidebar .slide {
     min-height: 100%; }
+  .sidebar .slide.single {
+    min-height: auto;
+    height: auto; }
   /* Gallery page */
   .GalleryPage .grid .item {
     margin: 0 0 10px; }
@@ -2911,7 +2913,20 @@ footer {
   .GalleryPage .grid .item.portrait {
     height: 500px; }
   .GalleryPage .grid .item.landscape {
-    height: 300px; } }
+    height: 300px; }
+  .HomePage footer {
+    height: 180px;
+    bottom: -210px; }
+  footer ul a {
+    padding: 0;
+    width: 50%;
+    float: left;
+    margin: 0 0 10px; }
+  footer .copy {
+    margin: 0;
+    padding: 0 10px; }
+    footer .copy span {
+      display: block; } }
 
 /* 	RESPONDING TO HEIGHT */
 /*

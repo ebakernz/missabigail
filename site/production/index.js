@@ -347,30 +347,22 @@ function MobileNavExpansion() {
 		$('.nav-panel').toggleClass('active');
 		
 	});
-	
-	$mobile = isMobile();
-	if( $mobile ) {
-		$('.mainnav li.dropdown > a').click(function() {
-			$(this).find('.secondary').toggle();
-		});
-	}
 
 	// If using mobile nav, smaller than ipad portrait
 	if( $(window).width() < 700 ) {
+		/*console.log('mob nav');*/
 
-		$('.mainnav li.dropdown > a').click(function(evt) {
+		$('.mainnav li.dropdown a').click(function(evt) {
 			evt.preventDefault();
+			/*console.log('clicked');
+			console.log($(this));*/
+
 			$(this).toggleClass('open');
-			$(this).find('.secondary').toggle();
+			$(this).next('.secondary').toggle();
 		});
 
 	}
 
-}
-
-function isMobile() {
-  try{ document.createEvent("TouchEvent"); return true; }
-  catch(e){ return false; }
 }
 
 

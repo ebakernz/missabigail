@@ -127,12 +127,6 @@ function GeneralSlides() {
 
 function GallerySlides() {
 
-	// Click on slide nav overrides timer
-	$('.GalleryPage .slides .slidenav a').click( function(evt) {
-		evt.preventDefault();
-		changeGallerySlides( 'click', $(this).attr('href') );
-	});
-
 	// Click on gallery item to trigger
 	$('.gallery-items .popup-trigger').click(function(evt) {
         evt.preventDefault();
@@ -140,6 +134,12 @@ function GallerySlides() {
         var num = href - 1;
         changeGallerySlides( 'select', num );
     });
+
+	// Click on slide nav overrides timer
+	$('.GalleryPage .slides .slidenav a').click( function(evt) {
+		evt.preventDefault();
+		changeGallerySlides( 'click', $(this).attr('href') );
+	});
 	
 	function changeGallerySlides( mode, destination ){
 
@@ -376,10 +376,8 @@ $(document).ready( function() {
 		ResponsiveBG();
 	}
 
-	if( $(window).width() > 500 ) {
-		// only do popup gallery if bigger than 500px
-		Popups();
-	}
+	// only do popup gallery if bigger than 500px
+	Popups();
 
 	// Homepage and sidebar slides
 	if( $('.HomePage .slides .slide, .sidebar .slides .slide').length > 0 ) GeneralSlides();

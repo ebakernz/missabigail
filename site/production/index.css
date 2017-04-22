@@ -2401,10 +2401,11 @@ footer {
 	Testimonials
 */
 .testimonials {
-  margin: 30px 40px 0; }
+  margin: 30px 0 0; }
   .testimonials h3 {
     padding-bottom: 20px; }
   .testimonials .quotes {
+    margin: 0 40px;
     position: relative; }
   .testimonials .quote {
     width: 100%;

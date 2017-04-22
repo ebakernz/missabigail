@@ -1,6 +1,6 @@
 <div class="testimonials">
 
-	<h3>What people have been saying</h3>
+	<h3 class="burgundy">What people have been saying</h3>
 
 	<div class="quotes">
 		<% loop Testimonials %>

@@ -15,6 +15,7 @@
 
     ul.inner {
     	padding: 0;
+    	text-align: center;
     }
 
     ul li:hover {
@@ -29,9 +30,9 @@
 	}
 
 	li {
-		display: inline-block;
+		display: inline;
 		position: relative;
-		width: 16.4%;
+		padding: 8px 0;
 
 		&.section a { color: $burgundy; }
 		
@@ -49,14 +50,14 @@
 	}
 
 	a {
-		display: block;
+		display: inline-block;
 		font-size: 1.1em;
 		color: $black;
 		text-transform: uppercase;
 		text-decoration: none;
 		text-align: center;
-		padding: 8px 0;
-		width: 100%;	
+		padding: 7px 45px;
+		/*width: 100%;*/	
 
 		&:hover {
 			color: $burgundy;
@@ -66,7 +67,8 @@
 	ul.secondary {
 		display: none;
 		position: absolute;
-		top: 35px;
+		top: 33px;
+		left: 0;
 		z-index: 99;
 		width: 100%;
 
@@ -74,6 +76,7 @@
 			float: none;
 			position: relative;
 			margin: 0;
+			padding: 0;
 			width: 100%;
 			-webkit-box-shadow: none;
 			-moz-box-shadow: none;

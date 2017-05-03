@@ -59,7 +59,12 @@
 
 	.liner { padding: 30px; }
 
-	.mainnav ul { width: 100%; }
+	.mainnav ul { 
+		width: 100%; 
+		li a {
+			padding: 7px 35px;
+		}
+	}
 
 	/* Gallery page */
 	.GalleryPage .grid .item { height: 300px; }
@@ -68,10 +73,17 @@
 
 @media (max-width: 980px) {
 
-	.mainnav ul.secondary li a {
-		font-size: 1em;
-		padding: 8px 5%;
-		width: 90%;
+	.mainnav {
+
+		ul li a {
+			padding: 7px 20px;
+		}
+
+		ul.secondary li a {
+			font-size: 1em;
+			padding: 8px 5%;
+			width: 90%;
+		}
 	}
 
 	/* Testimonials */

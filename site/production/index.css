@@ -2662,7 +2662,8 @@ footer {
   .mainnav li {
     width: 15%; }
   .sidebar .slide {
-    max-width: 100%; }
+    max-width: 100%;
+    min-height: auto; }
   /* Gallery page */
   .GalleryPage .grid .item {
     height: 400px; } }

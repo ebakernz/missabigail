@@ -2904,8 +2904,12 @@ footer {
       padding: 0 5px; }
   footer .social-links {
     float: none;
-    width: 90px;
-    margin: 10px auto; }
+    width: 200px;
+    margin: 10px auto;
+    text-align: center; }
+    footer .social-links a {
+      display: inline-block;
+      float: none; }
   footer .copy {
     clear: right;
     text-align: center; } }
